@@ -22,10 +22,9 @@
 
 ```json
 {
-    "code": *,
+    "code": “*”,
     "info": "[Some message]"
 }
-
 ```
 
 ​	后续的错误响应提供对应的`code`，`info`和对应的说明。
@@ -73,7 +72,7 @@
 
   ```json
   {
-    "created": True,
+    "created": true,
     "id":1//用户id
   }
   ```
@@ -102,21 +101,21 @@
 
   ```json
   {
-    "deleted": True
+    "deleted": true
   }
   ```
 
 - **错误响应**
 
-  | code | info                  | 说明             |
-  | :--- | :-------------------- | ---------------- |
-  | 1    | User is not logged in | 用户未在登陆状态 |
+  | code | info                  | 说明       |
+  | :--- | :-------------------- | ---------- |
+  | 1    | User is not logged in | 用户未登录 |
 
 ### 用户登录
 
 -  **URL**: /user/login
 
-- **接口说明**：用于用户登陆账户。
+- **接口说明**：用于用户登录账户。
 
 - **请求方式**: POST
 
@@ -133,7 +132,7 @@
 
   ```json
   {
-    "logged in": True,
+    "logged in": true,
     "token": "***.***.***"  //JWT
   }
   ```
@@ -161,15 +160,15 @@
 
   ```json
   {
-    "logged out": True
+    "logged out": true
   }
   ```
 
 - **错误响应**
 
-  | code | info                  | 说明             |
-  | :--- | :-------------------- | ---------------- |
-  | 1    | User is not logged in | 用户未在登陆状态 |
+  | code | info                  | 说明       |
+  | :--- | :-------------------- | ---------- |
+  | 1    | User is not logged in | 用户未登录 |
 
 ## 编辑信息
 
@@ -179,7 +178,7 @@
 
 ### 普通信息修改
 
-- **URL**: /user/reset
+- **URL**: /user/update_normal_info
 
 - **接口说明**：用于用户修改个人用户普通信息。
 
@@ -194,27 +193,27 @@
   }
   ```
 
-  - `avatar_url`表示用户头像的连接。
+  - `avatar_url`表示用户头像的链接。
 
 - **成功响应**
 
   ```json
   {
-    "reset": True,
+    "update": true,
   }
   ```
 
 - **错误响应**:
 
-  | code | info                    | 说明             |
-  | :--- | :---------------------- | ---------------- |
-  | 1    | User is not logged in   | 用户未在登陆状态 |
-  | 2    | Username already exists | 用户名已经存在   |
-  | 3    | Invalid username        | 新用户名不合法   |
+  | code | info                    | 说明           |
+  | :--- | :---------------------- | -------------- |
+  | 1    | User is not logged in   | 用户未登录     |
+  | 2    | Username already exists | 用户名已经存在 |
+  | 3    | Invalid username        | 新用户名不合法 |
 
 ### 身份认证信息修改
 
-- **URL**: /user/reset
+- **URL**: /user/update_auth_info
 
 - **接口说明**：用于用户修改用户身份认证信息。
 
@@ -237,17 +236,17 @@
 
   ```json
   {
-    "reset": True,
+    "update": true,
   }
   ```
 
 - **错误响应**:
 
-  | code | info                  | 说明             |
-  | :--- | :-------------------- | ---------------- |
-  | 1    | User is not logged in | 用户未在登陆状态 |
-  | 2    | Wrong old password    | 旧密码错误       |
-  | 3    | Invalid password      | 新密码不合法     |
+  | code | info                  | 说明         |
+  | :--- | :-------------------- | ------------ |
+  | 1    | User is not logged in | 用户未登录   |
+  | 2    | Wrong old password    | 旧密码错误   |
+  | 3    | Invalid password      | 新密码不合法 |
 
 ## 好友管理
 
@@ -257,7 +256,7 @@
 
 ### 用户查找
 
-- **URL**: /user/search_friends
+- **URL**: /user/friend/search
 
 - **接口说明**：用于用户查找其他⽤⼾。
 
@@ -267,7 +266,7 @@
 
   ```json
   {
-    "friend_name":"Bob"
+    "query": "search_query"
   }
   ```
 
@@ -275,24 +274,63 @@
 
   ```json
   {
-    "user_id": 对方的id,
-    "name": 对方的用户名,
-    "avatar": 对方的头像
+    "results": [
+      {
+        "user_id": 1,
+        "username": "example_user",
+        "avatar_url": "http://example.com/avatar.jpg"
+      },
+      {
+        "user_id": 2,
+        "username": "another_user",
+        "avatar_url": "http://example.com/avatar2.jpg"
+      },
+      ...
+    ]
   }
   ```
 
 - **错误响应**:
 
-  | code | info                  | 说明             |
-  | :--- | :-------------------- | ---------------- |
-  | 1    | User is not logged in | 用户未在登陆状态 |
-  | 2    | Target does not exist | 目标不存在       |
+  | code | info                  | 说明       |
+  | :--- | :-------------------- | ---------- |
+  | 1    | User is not logged in | 用户未登录 |
+
+### 用户详情
+
+- **URL**: /user/profile/{user_id}
+
+- **接口说明**：用于获取特定用户的详细信息。
+
+- **请求方法**: GET
+
+- **成功响应**
+
+  ```json
+  {
+    "user_id": 1,
+    "username": "example_user",
+    "email": "example@example.com",
+    "phone": "1234567890",
+    "avatar_url": "http://example.com/avatar.jpg",
+    "bio": "This is a short bio of the user."
+  }
+  ```
+
+  - `bio` 是用户的个人简介。
+
+- **错误响应**:
+
+  | code | info                  | 说明           |
+  | :--- | --------------------- | -------------- |
+  | 1    | User is not logged in | 用户未登录     |
+  | 2    | User not found        | 未找到指定用户 |
 
 ### 发送好友申请
 
-- **URL**: /user/send_friend_request
+- **URL**: /user/friend/request
 
-- **接口说明**：用于用户发送好友申请。
+- **接口说明**：用于用户发送添加好友申请。
 
 - **请求方法**: POST
 
@@ -300,32 +338,35 @@
 
   ```json
   {
-    "user_id":对方的id
+    "recipient_id": 12345
   }
   ```
+
+  - `recipient_id`是接收者的用户ID，即申请添加为好友的目标用户的ID
 
 - **成功响应**
 
   ```json
   {
-    "send request": True
+    "sent": true
   }
   ```
 
 - **错误响应**:
 
-  | code | info                       | 说明             |
-  | :--- | :------------------------- | ---------------- |
-  | 1    | User is not logged in      | 用户未在登陆状态 |
-  | 2    | Target does not exist      | 目标不存在       |
-  | 3    | Already friends            | 已经是好友       |
-  | 4    | The request already exists | 请求已存在       |
+  | code | info                       | 说明                 |
+  | :--- | :------------------------- | -------------------- |
+  | 1    | User is not logged in      | 用户未登录           |
+  | 2    | Target does not exist      | 目标不存在           |
+  | 3    | Already friends            | 已经是好友           |
+  | 4    | The request already exists | 请求已存在           |
+  | 5    | Self request detected      | 不能发送给自己的请求 |
 
 ### 查看好友申请
 
-- **URL**: /user/get_friend_requests
+- **URL**: /user/friend/requests
 
-- **接口说明**：用于用户查看所有好友申请。
+- **接口说明**：用于用户查看收到的好友申请。
 
 - **请求方法**: GET
 
@@ -335,24 +376,32 @@
   {
     "requests": [
       {
-        "user_id": 对方的id,
-        "name": 对方的用户名,
-        "avatar": 对方的头像
+        "request_id": 123,
+        "sender_id": 456,
+        "sender_name": "SenderUsername",
+        "sender_avatar": "http://example.com/avatar.jpg",
+        "sent_time": "2024-03-21 12:00:00"
       },
       ...
     ]
   }
   ```
 
+  - `request_id`：申请ID。
+  - `sender_id`：发送者的用户ID。
+  - `sender_name`：发送者的用户名。
+  - `sender_avatar`：发送者的头像链接。
+  - `sent_time`：申请发送时间。
+
 - **错误响应**:
 
-  | code | info                  | 说明             |
-  | :--- | :-------------------- | ---------------- |
-  | 1    | User is not logged in | 用户未在登陆状态 |
+  | code | info                  | 说明       |
+  | :--- | :-------------------- | ---------- |
+  | 1    | User is not logged in | 用户未登录 |
 
 ### 回应好友申请
 
-- **URL**: /user/respone_friend_request
+- **URL**: /user/respond_friend_request
 
 - **接口说明**：用于用户回应好友申请。
 
@@ -362,8 +411,8 @@
 
   ```json
   {
-    "user_id":对方的id,
-    "response":"accept"/"reject"
+    "request_id": "申请ID",
+    "response": "accept" //或 "reject"
   }
   ```
 
@@ -371,7 +420,7 @@
 
   ```json
   {
-    "become friends": True/False
+    "responded": true
   }
   ```
 
@@ -379,7 +428,7 @@
 
   | code | info                             | 说明             |
   | :--- | :------------------------------- | ---------------- |
-  | 1    | User is not logged in            | 用户未在登陆状态 |
+  | 1    | User is not logged in            | 用户未登录       |
   | 2    | The target user no longer exists | 目标用户已不存在 |
 
 ### 删除好友
@@ -394,7 +443,7 @@
 
   ```json
   {
-    "user_id":对方的id
+    "user_id":"好友ID"
   }
   ```
 
@@ -402,17 +451,17 @@
 
   ```json
   {
-    "delete friend": True
+    "delete": true
   }
   ```
 
 - **错误响应**:
 
-  | code | info                  | 说明             |
-  | :--- | :-------------------- | ---------------- |
-  | 1    | User is not logged in | 用户未在登陆状态 |
-  | 2    | Target does not exist | 目标不存在       |
-  | 3    | Not friends           | 对方不是好友     |
+  | code | info                  | 说明         |
+  | :--- | :-------------------- | ------------ |
+  | 1    | User is not logged in | 用户未登录   |
+  | 2    | Target does not exist | 目标不存在   |
+  | 3    | Not friends           | 对方不是好友 |
 
 ### 获取好友列表
 
@@ -428,9 +477,9 @@
   {
     "friends": [
           {
-              "user_id": 好友id,
-              "name": 好友用户名,
-              "avatar": 好友头像
+              "friend_id": "好友ID",
+        			"username": "好友用户名",
+        			"avatar_url": "好友头像URL"
           },
       ...
       ]
@@ -439,13 +488,13 @@
 
 - **错误响应**:
 
-  | code | info                  | 说明             |
-  | :--- | :-------------------- | ---------------- |
-  | 1    | User is not logged in | 用户未在登陆状态 |
+  | code | info                  | 说明       |
+  | :--- | :-------------------- | ---------- |
+  | 1    | User is not logged in | 用户未登录 |
 
 ### 创建分组
 
-- **URL**: /user/create_group
+- **URL**: /user/create_friend_group
 
 - **接口说明**：用于用户创建好友分组。
 
@@ -455,30 +504,30 @@
 
   ```json
   {
-    "group_name":"classmate"
+    "friend_group_name":"classmate"
   }
   ```
 
-  - `group_name`代表分组名，非空字符串，长度不大于20,不能重复。
+  - `friend_group_name`代表分组名，非空字符串，长度不大于20个字符,不能重复。
 
 - **成功响应**
 
   ```json
   {
-    "group_id": 分组的id
+    "friend_group_id": "分组的ID"
   }
   ```
 
 - **错误响应**:
 
-  | code | info                      | 说明             |
-  | :--- | :------------------------ | ---------------- |
-  | 1    | User is not logged in     | 用户未在登陆状态 |
-  | 2    | The group name is invalid | 分组名不合法     |
+  | code | info                             | 说明         |
+  | :--- | :------------------------------- | ------------ |
+  | 1    | User is not logged in            | 用户未登录   |
+  | 2    | The friend group name is invalid | 分组名不合法 |
 
 ### 删除分组
 
-- **URL**: /user/delete_group
+- **URL**: /user/delete_friend_group
 
 - **接口说明**：用于用户删除好友分组。
 
@@ -488,7 +537,7 @@
 
   ```json
   {
-    "group_id":分组的id
+    "friend_group_id":"分组的ID"
   }
   ```
 
@@ -496,20 +545,20 @@
 
   ```json
   {
-    "deleted": True
+    "deleted": true
   }
   ```
 
 - **错误响应**:
 
-  | code | info                  | 说明             |
-  | :--- | :-------------------- | ---------------- |
-  | 1    | User is not logged in | 用户未在登陆状态 |
-  | 2    | Group does not exist  | 分组不存在       |
+  | code | info                            | 说明       |
+  | :--- | :------------------------------ | ---------- |
+  | 1    | User is not logged in           | 用户未登录 |
+  | 2    | The friend group does not exist | 分组不存在 |
 
 ### 查看分组
 
-- **URL**: /user/get_groups
+- **URL**: /user/get_friend_groups
 
 - **接口说明**：用于用户获取所有好友分组。
 
@@ -519,10 +568,10 @@
 
   ```json
   {
-    "groups": [
+    "friend_groups": [
       {
-        "group_id": 分组id,
-        "group_name": 分组名称
+        "friend_group_id": "分组ID",
+        "friend_group_name": "分组名称"
       },
       ...
     ]
@@ -531,13 +580,13 @@
 
 - **错误响应**:
 
-  | code | info                  | 说明             |
-  | :--- | :-------------------- | ---------------- |
-  | 1    | User is not logged in | 用户未在登陆状态 |
+  | code | info                  | 说明       |
+  | :--- | :-------------------- | ---------- |
+  | 1    | User is not logged in | 用户未登录 |
 
 ### 查看分组好友
 
-- **URL**: /user/groups/{group_id}
+- **URL**: /user/friend_groups/{friend_group_id}
 
 - **接口说明**：用于用户获取所有好友分组。
 
@@ -547,7 +596,7 @@
 
   ```json
   {
-    "group_id":分组的id
+    "friend_group_id":"分组ID"
   }
   ```
 
@@ -555,28 +604,27 @@
 
   ```json
   {
-    "groups": [
-      "friends": [
+    "friends": [
       {
-        "user_id": 用户id,
-        "name": 好友的用户名,
-        "avatar": 好友的头像
+        "user_id": "用户ID",
+        "username": "好友的用户名",
+        "avatar_url": "好友的头像链接"
       },
       ...
     ]
   }
   ```
-
+  
 - **错误响应**:
 
-  | code | info                  | 说明             |
-  | :--- | :-------------------- | ---------------- |
-  | 1    | User is not logged in | 用户未在登陆状态 |
-  | 2    | Group does not exist  | 分组不存在       |
+  | code | info                            | 说明       |
+  | :--- | :------------------------------ | ---------- |
+  | 1    | User is not logged in           | 用户未登录 |
+  | 2    | The friend group does not exist | 分组不存在 |
 
 ### 添加好友到分组
 
-- **URL**: /user/add_friend_to_group
+- **URL**: /user/add_friend_to_friend_group
 
 - **接口说明**：用于用户将好友添加到某一指定的分组。
 
@@ -586,8 +634,8 @@
 
   ```json
   {
-    "user_id":对方的id,
-    "group_id":分组id
+    "user_id": "对方的用户ID",
+    "friend_group_id": "分组的ID"
   }
   ```
 
@@ -595,24 +643,24 @@
 
   ```json
   {
-    "added": True
+    "added": true
   }
   ```
 
 - **错误响应**:
 
-  | code | info                  | 说明               |
-  | :--- | :-------------------- | ------------------ |
-  | 1    | User is not logged in | 用户未在登陆状态   |
-  | 2    | Group does not exist  | 分组不存在         |
-  | 3    | Not friends           | 对方不是好友       |
-  | 4    | Already in this group | 对方已经在该分组内 |
+  | code | info                            | 说明               |
+  | :--- | :------------------------------ | ------------------ |
+  | 1    | User is not logged in           | 用户未登录         |
+  | 2    | The friend group does not exist | 分组不存在         |
+  | 3    | Not friends                     | 对方不是好友       |
+  | 4    | Already in this friend group    | 对方已经在该分组内 |
 
 ### 将好友移除分组
 
-- **URL**: /user/delete_friend_from_group
+- **URL**: /user/delete_friend_from_friend_group
 
-- **接口说明**：用于用户将好友从mou分组。
+- **接口说明**：用于用户将好友从分组移出。
 
 - **请求方法**: POST
 
@@ -620,8 +668,8 @@
 
   ```json
   {
-    "user_id":对方的id,
-    "group_id"：分组id
+    "user_id": "对方的id",
+    "friend_group_id": "分组id"
   }
   ```
 
@@ -629,18 +677,18 @@
 
   ```json
   {
-    "deleted": True
+    "deleted": true
   }
   ```
 
 - **错误响应**:
 
-  | code | info                       | 说明             |
-  | :--- | :------------------------- | ---------------- |
-  | 1    | User is not logged in      | 用户未在登陆状态 |
-  | 2    | Group does not exist       | 分组不存在       |
-  | 3    | Not friends                | 对方不是好友     |
-  | 4    | The request already exists | 对方不在该分组内 |
+  | code | info                                 | 说明             |
+  | :--- | :----------------------------------- | ---------------- |
+  | 1    | User is not logged in                | 用户未登录       |
+  | 2    | The  friend group does not exist     | 分组不存在       |
+  | 3    | Not friends                          | 对方不是好友     |
+  | 4    | The user is not in the  friend group | 对方不在该分组内 |
 
 ## 会话管理
 
@@ -650,7 +698,7 @@
 
 ### 获取所有私聊
 
-- **URL**: /user/get_private_conversation
+- **URL**: /user/get_private_conversations
 
 - **接口说明**：用于用户获取所有的私人聊天。
 
@@ -662,13 +710,13 @@
   {
     "conversations": [
       {
-        "id": 会话id,
-        "is_private":True,
-        "friend_id": 对方id,
-        "friend_name": 对方的用户名,
-        "friend_avatar": 对方的头像,
-       	"not_read":未读消息数目,
-        "disabled": 失效标志
+        "conversation_id": "会话ID",
+        "is_private": true,
+        "friend_id": "对方ID",
+        "friend_name": "对方用户名",
+        "friend_avatar": "对方头像链接",
+        "not_read": "未读消息数目",
+        "disabled": "失效标志"
       },
       ...
     ]
@@ -677,9 +725,9 @@
 
 - **错误响应**:
 
-  | code | info                  | 说明             |
-  | :--- | :-------------------- | ---------------- |
-  | 1    | User is not logged in | 用户未在登陆状态 |
+  | code | info                  | 说明       |
+  | :--- | :-------------------- | ---------- |
+  | 1    | User is not logged in | 用户未登录 |
 
 ### 发起私聊
 
@@ -693,7 +741,7 @@
 
   ```json
   {
-    "friend_id":好友的id
+    "friend_id":"好友的id"
   }
   ```
 
@@ -709,11 +757,11 @@
   
 - **错误响应**:
 
-  | code | info                  | 说明             |
-  | :--- | :-------------------- | ---------------- |
-  | 1    | User is not logged in | 用户未在登陆状态 |
-  | 2    | Target does not exist | 目标不存在       |
-  | 3    | Not friends           | 对方不是好友     |
+  | code | info                  | 说明         |
+  | :--- | :-------------------- | ------------ |
+  | 1    | User is not logged in | 用户未登录   |
+  | 2    | Target does not exist | 目标不存在   |
+  | 3    | Not friends           | 对方不是好友 |
 
 ### 聊天界面
 
@@ -729,17 +777,17 @@
   {
     "messages": [
       {
-        "msg_id": 消息id,
-        "msg_body": 消息体,
-        "sender_id":发送者id,
-        "sender_name": 发送者用户名,
-        "sender_avatar": 发送者头像,
-        "create_time": 创建时间,
-        "reply_id": 回复消息id,
-        "reply content":回复内容,
-  			"replied_times":被回复次数,
-        "read_status": 是否已读,
-        "read_by": 已读用户列表
+        "msg_id": "消息ID",
+        "msg_body": "消息体",
+        "sender_id": "发送者ID",
+        "sender_name": "发送者用户名",
+        "sender_avatar": "发送者头像链接",
+        "create_time": "创建时间",
+        "reply_id": "回复消息ID",
+        "reply_content": "回复内容",
+  			"replied_times": "被回复次数",
+        "read_status": "是否已读",
+        "read_by": ["已读用户ID"]
       },
       ...
     ]
@@ -751,11 +799,11 @@
 
 - **错误响应**:
 
-  | code | info                   | 说明             |
-  | :--- | :--------------------- | ---------------- |
-  | 1    | User is not logged in  | 用户未在登陆状态 |
-  | 2    | Target does not exist  | 目标会话不存在   |
-  | 3    | User is not in session | 用户不在会话中   |
+  | code | info                   | 说明           |
+  | :--- | :--------------------- | -------------- |
+  | 1    | User is not logged in  | 用户未登录     |
+  | 2    | Target does not exist  | 目标会话不存在 |
+  | 3    | User is not in session | 用户不在会话中 |
 
 ### 发送消息
 
@@ -769,8 +817,8 @@
 
   ```json
   {
-    "conversation_id": 会话id,
-    "content": 消息内容
+    "conversation_id": "会话ID",
+    "content": "消息内容"
   }
   ```
 
@@ -778,21 +826,21 @@
 
   ```json
   {
-    "message_id":消息id,
+    "message_id": "消息ID"
   }
   ```
 
 - **错误响应**:
 
-  | code | info                   | 说明             |
-  | :--- | :--------------------- | ---------------- |
-  | 1    | User is not logged in  | 用户未在登陆状态 |
-  | 2    | Target does not exist  | 目标会话不存在   |
-  | 3    | User is not in session | 用户不在会话中   |
+  | code | info                   | 说明           |
+  | :--- | :--------------------- | -------------- |
+  | 1    | User is not logged in  | 用户未登录     |
+  | 2    | Target does not exist  | 目标会话不存在 |
+  | 3    | User is not in session | 用户不在会话中 |
 
 ### 获取所有聊天记录
 
-- **URL**: /user/all_records/{conversation_id}
+- **URL**: /user/records/{conversation_id}
 
 - **接口说明**：用于用户获取某一会话的所有聊天记录。
 
@@ -804,14 +852,14 @@
   {
     "messages": [
       {
-        "msg_id": 消息ID,
-        "msg_body": 消息体,
-        "sender_id": 发送者ID,
-        "sender_name": 发送者用户名,
-        "sender_avatar": 发送者头像,
-        "create_time": 创建时间,
-        "reply_id": 回复消息id,
-        "reply content":回复内容,
+        "msg_id": "消息ID",
+        "msg_body": "消息体",
+        "sender_id": "发送者ID",
+        "sender_name": "发送者用户名",
+        "sender_avatar": "发送者头像",
+        "create_time": "创建时间",
+        "reply_id": "回复消息ID",
+        "reply_content": "回复内容"
       },
       ...
     ]
@@ -820,17 +868,17 @@
 
 - **错误响应**:
 
-  | code | info                   | 说明             |
-  | :--- | :--------------------- | ---------------- |
-  | 1    | User is not logged in  | 用户未在登陆状态 |
-  | 2    | Target does not exist  | 目标会话不存在   |
-  | 3    | User is not in session | 用户不在会话中   |
+  | code | info                   | 说明           |
+  | :--- | :--------------------- | -------------- |
+  | 1    | User is not logged in  | 用户未登录     |
+  | 2    | Target does not exist  | 目标会话不存在 |
+  | 3    | User is not in session | 用户不在会话中 |
 
-### 获取时间查询聊天记录
+### 根据时间或成员查询聊天记录
 
 - **URL**: /user/filter_records
 
-- **接口说明**：用于用户根据时间获取某一会话的所有聊天记录。
+- **接口说明**：用于用户根据时间或成员获取某一会话的所有聊天记录。
 
 - **请求方法**：POST
 
@@ -852,14 +900,14 @@
   {
     "messages": [
       {
-        "msg_id": 消息ID,
-        "msg_body": 消息体,
-        "sender_id": 发送者ID,
-        "sender_name": 发送者用户名,
-        "sender_avatar": 发送者头像,
-        "create_time": 创建时间,
-        "reply_id": 回复消息id,
-        "reply content":回复内容,
+        "msg_id": "消息ID",
+        "msg_body": "消息体",
+        "sender_id": "发送者ID",
+        "sender_name": "发送者用户名",
+        "sender_avatar": "发送者头像",
+        "create_time": "创建时间",
+        "reply_id": "回复消息ID",
+        "reply_content": "回复内容"
       },
       ...
     ]
@@ -868,11 +916,11 @@
 
 - **错误响应**:
 
-  | code | info                   | 说明             |
-  | :--- | :--------------------- | ---------------- |
-  | 1    | User is not logged in  | 用户未在登陆状态 |
-  | 2    | Target does not exist  | 目标会话不存在   |
-  | 3    | User is not in session | 用户不在会话中   |
+  | code | info                   | 说明           |
+  | :--- | :--------------------- | -------------- |
+  | 1    | User is not logged in  | 用户未登录     |
+  | 2    | Target does not exist  | 目标会话不存在 |
+  | 3    | User is not in session | 用户不在会话中 |
 
 ### 删除聊天记录
 
@@ -886,7 +934,7 @@
 
   ```json
   {
-    "conversation_id": 会话id
+    "conversation_id": "会话id"
   }
   ```
 
@@ -894,17 +942,17 @@
 
   ```json
   {
-    "delete": True
+    "delete": true
   }
   ```
 
 - **错误响应**:
 
-  | code | info                   | 说明             |
-  | :--- | :--------------------- | ---------------- |
-  | 1    | User is not logged in  | 用户未在登陆状态 |
-  | 2    | Target does not exist  | 目标会话不存在   |
-  | 3    | User is not in session | 用户不在会话     |
+  | code | info                   | 说明           |
+  | :--- | :--------------------- | -------------- |
+  | 1    | User is not logged in  | 用户未登录     |
+  | 2    | Target does not exist  | 目标会话不存在 |
+  | 3    | User is not in session | 用户不在会话   |
 
 ## 群聊管理
 
@@ -924,8 +972,8 @@
 
   ```json
   {
-    "members":id列表,
-    "name":群聊名称
+    "members_id": ["用户ID1", "用户ID2", ...],
+    "name": "群聊名称"
   }
   ```
 
@@ -935,20 +983,20 @@
 
   ```json
   {
-    "conversation_id": 会话id,
-    "group":群id,
-    "group_name": 群聊名称,
-    "group_avatar": 群聊头像,
+   	"conversation_id": "会话ID",
+    "group_id": "群ID",
+    "group_name": "群聊名称",
+    "group_avatar": "群聊头像链接"
   }
   ```
 
 - **错误响应**:
 
-  | code | info                  | 说明             |
-  | :--- | :-------------------- | ---------------- |
-  | 1    | User is not logged in | 用户未在登陆状态 |
-  | 2    | Target does not exist | 有目标不存在     |
-  | 3    | Not friends           | 有目标不是好友   |
+  | code | info                  | 说明           |
+  | :--- | :-------------------- | -------------- |
+  | 1    | User is not logged in | 用户未登录     |
+  | 2    | Target does not exist | 有目标不存在   |
+  | 3    | Not friends           | 有目标不是好友 |
 
 ### 获取所有群聊
 
@@ -964,12 +1012,12 @@
   {
     "conversations": [
       {
-        "id": 会话id,
-        "is_private":False,
-        "group_name": 群聊名称,
-        "group_avatar": 群聊头像,
-       	"not_read":未读消息数目,
-        "disabled": 失效标志
+        "id": "会话ID",
+        "is_private": false,
+        "group_name": "群聊名称",
+        "group_avatar": "群聊头像链接",
+        "not_read": "未读消息数目",
+        "disabled": "失效标志"
       },
       ...
     ]
@@ -978,13 +1026,13 @@
 
 - **错误响应**:
 
-  | code | info                  | 说明             |
-  | :--- | :-------------------- | ---------------- |
-  | 1    | User is not logged in | 用户未在登陆状态 |
+  | code | info                  | 说明       |
+  | :--- | :-------------------- | ---------- |
+  | 1    | User is not logged in | 用户未登录 |
 
 ### 群聊信息展示
 
-- **URL**: /user/conversation/{group}/info
+- **URL**: /user/conversation/{group_id}/info
 
 - **接口说明**：用于获取特定群聊的基本信息。
 
@@ -994,27 +1042,28 @@
 
   ```json
   {
-    "group":群id,
+    "group_id": "群组ID",
     "group_name": "群聊名称",
     "owner": {
-      "user_id": id,
-      "name": 用户名,
-      "avatar": 头像
+      "user_id": "群主ID",
+      "username": "群主用户名",
+      "avatar": "群主头像链接"
     },
     "administrators": [
       {
-        "user_id": id,
-        "name": 用户名,
-        "avatar": 头像
-      } ...
+        "user_id": "管理员ID",
+        "username": "管理员用户名",
+        "avatar": "管理员头像链接"
+      },
+      ...,
     ],
     "members": [
       {
         "user_id": "成员ID",
         "username": "成员用户名",
-        "avatar": "成员头像"
-      }
-      ...
+        "avatar": "成员头像链接"
+      },
+      ...,
     ],
     "announcement": "历史群公告"
   }
@@ -1022,11 +1071,11 @@
 
 **错误响应**:
 
-| code | info                   | 说明             |
-| :--- | :--------------------- | ---------------- |
-| 1    | User is not logged in  | 用户未在登陆状态 |
-| 2    | Target does not exist  | 目标会话不存在   |
-| 3    | User is not in session | 用户不在会话中   |
+| code | info                   | 说明           |
+| :--- | :--------------------- | -------------- |
+| 1    | User is not logged in  | 用户未登录     |
+| 2    | Target does not exist  | 群聊不存在     |
+| 3    | User is not in session | 用户不在会话中 |
 
 ### 添加管理员
 
@@ -1038,18 +1087,18 @@
 
 - **请求体**：
 
-  ```
+  ```json
   {
-    "group": 群组ID,
-    "member_id": 成员ID
+    "group_id": "群组ID",
+    "member_id": "成员ID"
   }
   ```
 
 - **成功响应**
 
-  ```
+  ```json
   {
-    "Added": True
+    "added": true
   }
   ```
 
@@ -1057,7 +1106,7 @@
 
   | code | info                    | 说明             |
   | :--- | :---------------------- | ---------------- |
-  | 1    | User is not logged in   | 用户未在登陆状态 |
+  | 1    | User is not logged in   | 用户未登录       |
   | 2    | Group does not exist    | 群组不存在       |
   | 3    | Member does not exist   | 成员不存在       |
   | 4    | Member is already admin | 成员已经是管理员 |
@@ -1073,30 +1122,30 @@
 
 - **请求体**：
 
-  ```
+  ```json
   {
-    "group": "群组ID",
+    "group_id": "群组ID",
     "admin_id": "管理员ID"
   }
   ```
 
 - **成功响应**
 
-  ```
+  ```json
   {
-    "Removed": true
+    "removed": true
   }
   ```
 
 - **错误响应**:
 
-  | code | info                  | 说明             |
-  | :--- | :-------------------- | ---------------- |
-  | 1    | User is not logged in | 用户未在登陆状态 |
-  | 2    | Group does not exist  | 群组不存在       |
-  | 3    | Admin does not exist  | 管理员不存在     |
-  | 4    | Member is not admin   | 目标不是管理员   |
-  | 5    | Permission denied     | 操作权限不足     |
+  | code | info                  | 说明           |
+  | :--- | :-------------------- | -------------- |
+  | 1    | User is not logged in | 用户未登录     |
+  | 2    | Group does not exist  | 群组不存在     |
+  | 3    | Admin does not exist  | 管理员不存在   |
+  | 4    | Member is not admin   | 目标不是管理员 |
+  | 5    | Permission denied     | 操作权限不足   |
 
 ### 转让群主
 
@@ -1108,9 +1157,9 @@
 
 - **请求体**：
 
-  ```
+  ```json
   {
-    "group": "群组ID",
+    "group_id": "群组ID",
     "new_owner_id": "新群主ID"
   }
   ```
@@ -1120,18 +1169,18 @@
   ```
   
   {
-    "Transferred": true
+    "transferred": true
   }
   ```
 
 - **错误响应**:
 
-  | code | info                  | 说明             |
-  | :--- | :-------------------- | ---------------- |
-  | 1    | User is not logged in | 用户未在登陆状态 |
-  | 2    | Group does not exist  | 群组不存在       |
-  | 3    | Member does not exist | 目标不存在       |
-  | 4    | Permission denied     | 操作权限不足     |
+  | code | info                  | 说明         |
+  | :--- | :-------------------- | ------------ |
+  | 1    | User is not logged in | 用户未登录   |
+  | 2    | Group does not exist  | 群组不存在   |
+  | 3    | Member does not exist | 目标不存在   |
+  | 4    | Permission denied     | 操作权限不足 |
 
 ### 移除群成员
 
@@ -1143,29 +1192,29 @@
 
 - **请求体**：
 
-  ```
+  ```json
   {
-    "group": "群组ID",
+    "group_id": "群组ID",
     "member_id": "成员ID"
   }
   ```
 
 - **成功响应**
 
-  ```
+  ```json
   {
-    "Removed": true
+    "removed": true
   }
   ```
 
 - **错误响应**:
 
-  | code | info                       | 说明             |
-  | :--- | :------------------------- | ---------------- |
-  | 1    | User is not logged in      | 用户未在登陆状态 |
-  | 2    | Group does not exist       | 群组不存在       |
-  | 4    | Member is not in the group | 成员不在群组中   |
-  | 5    | Permission denied          | 操作权限不足     |
+  | code | info                       | 说明           |
+  | :--- | :------------------------- | -------------- |
+  | 1    | User is not logged in      | 用户未登录     |
+  | 2    | Group does not exist       | 群组不存在     |
+  | 4    | Member is not in the group | 成员不在群组中 |
+  | 5    | Permission denied          | 操作权限不足   |
 
 ### 邀请用户加入群聊
 
@@ -1177,18 +1226,18 @@
 
 - **请求体**：
 
-  ```
+  ```json
   {
-    "group": "群组ID",
+    "group_id": "群组ID",
     "invited_user_id": "被邀请用户ID"
   }
   ```
 
 - **成功响应**
 
-  ```
+  ```json
   {
-    "Invited": true
+    "invited": true
   }
   ```
 
@@ -1196,7 +1245,7 @@
 
   | code | info                         | 说明             |
   | :--- | :--------------------------- | ---------------- |
-  | 1    | User is not logged in        | 用户未在登陆状态 |
+  | 1    | User is not logged in        | 用户未登录       |
   | 2    | Group does not exist         | 群组不存在       |
   | 3    | User does not exist          | 用户不存在       |
   | 4    | User is already in the group | 用户已经在群组中 |
@@ -1212,7 +1261,7 @@
 
 - **请求体**：
 
-  ```
+  ```json
   {
     "group_id": "群组ID",
     "invited_user_id": "被邀请用户ID"
@@ -1221,21 +1270,21 @@
 
 - **成功响应**
 
-  ```
+  ```json
   {
-    "Invited": true
+    "invited": true
   }
   ```
 
 - **错误响应**:
 
-  | code | info                    | 说明             |
-  | :--- | :---------------------- | ---------------- |
-  | 1    | User is not logged in   | 用户未在登陆状态 |
-  | 2    | Group does not exist    | 群组不存在       |
-  | 3    | User does not exist     | 用户不存在       |
-  | 4    | Invitation already sent | 邀请已发送       |
-  | 5    | Permission denied       | 操作权限不足     |
+  | code | info                    | 说明         |
+  | :--- | :---------------------- | ------------ |
+  | 1    | User is not logged in   | 用户未登录   |
+  | 2    | Group does not exist    | 群组不存在   |
+  | 3    | User does not exist     | 用户不存在   |
+  | 4    | Invitation already sent | 邀请已发送   |
+  | 5    | Permission denied       | 操作权限不足 |
 
 ### 查看邀请请求
 
@@ -1247,27 +1296,31 @@
 
 - **请求体**：
 
-  ```
+  ```json
   {
-    "group_id": 群组ID
+    "group_id": "群组ID"
   }
   ```
 
 - **成功响应**
 
-  ```
+  ```json
   {
     "invitations": [
       {
-        "invitation_id": 邀请体id,
-        "inviter_id": 邀请者id,
-        "inviter_name": 邀请者用户名,
-        "inviter_avatar": 邀请者头像,
-        "invitee_id": 被邀请者id,
-        "invitee_name": 被邀请者用户名,
-        "invitee_avatar": 被邀请者头像,
-        "status": 邀请状态,
-        "create_time": 创建时间
+        "invitation_id": "邀请ID",
+    		"inviter": {
+      "user_id": "邀请者ID",
+      "name": "邀请者用户名",
+      "avatar": "邀请者头像链接"
+    },
+    "invitee": {
+      "user_id": "被邀请者ID",
+      "name": "被邀请者用户名",
+      "avatar": "被邀请者头像链接"
+    },
+    "status": "邀请状态",
+    "create_time": "创建时间"
       }
       ...
     ]
@@ -1282,11 +1335,11 @@
 
 - **错误响应**:
 
-  | code | info                  | 说明             |
-  | :--- | :-------------------- | ---------------- |
-  | 1    | User is not logged in | 用户未在登陆状态 |
-  | 2    | Group does not exist  | 群组不存在       |
-  | 3    | Permission denied     | 操作权限不足     |
+  | code | info                  | 说明         |
+  | :--- | :-------------------- | ------------ |
+  | 1    | User is not logged in | 用户未登录   |
+  | 2    | Group does not exist  | 群组不存在   |
+  | 3    | Permission denied     | 操作权限不足 |
 
 ### 回应进群邀请
 
@@ -1298,30 +1351,30 @@
 
 - **请求体**：
 
-  ```
+  ```json
   {
-  	"group_id": 群组ID
-    "invitation_id": 邀请ID,
-    "response": 回应 (accepted/rejected)
+  	"group_id": "群组ID"
+    "invitation_id": "邀请ID",
+    "response": "回应" (accepted/rejected)
   }
   ```
 
 - **成功响应**
 
-  ```
+  ```json
   {
-    "Responded": True
+    "responded": true
   }
   ```
 
 - **错误响应**:
 
-  | code | info                  | 说明             |
-  | :--- | :-------------------- | ---------------- |
-  | 1    | User is not logged in | 用户未在登陆状态 |
-  | 2    | Invitation not found  | 邀请不存在       |
-  | 3    | Group does not exist  | 群组不存在       |
-  | 4    | Permission denied     | 操作权限不足     |
+  | code | info                  | 说明         |
+  | :--- | :-------------------- | ------------ |
+  | 1    | User is not logged in | 用户未登录   |
+  | 2    | Invitation not found  | 邀请不存在   |
+  | 3    | Group does not exist  | 群组不存在   |
+  | 4    | Permission denied     | 操作权限不足 |
 
 ### 用户退出群聊
 
@@ -1333,28 +1386,28 @@
 
 - **请求体**：
 
-  ```
+  ```json
   {
-    "group_id": 群组ID
+    "group_id": "群组ID"
   }
   ```
 
 - **成功响应**
 
-  ```
+  ```json
   {
-    "Left": True
+    "left": true
   }
   ```
 
 - **错误响应**:
 
-  | code | info                    | 说明             |
-  | :--- | :---------------------- | ---------------- |
-  | 1    | User is not logged in   | 用户未在登陆状态 |
-  | 2    | Group does not exist    | 群组不存在       |
-  | 3    | User is not a member    | 用户不是群成员   |
-  | 4    | User is the group owner | 用户是群主       |
+  | code | info                    | 说明           |
+  | :--- | :---------------------- | -------------- |
+  | 1    | User is not logged in   | 用户未登录     |
+  | 2    | Group does not exist    | 群组不存在     |
+  | 3    | User is not a member    | 用户不是群成员 |
+  | 4    | User is the group owner | 用户是群主     |
 
   > [!NOTE]
   >
@@ -1370,7 +1423,7 @@
 
 - **请求体**：
 
-  ```
+  ```json
   {
     "group_id": "群组ID",
     "announcement": "群公告内容"
@@ -1379,16 +1432,16 @@
 
 - **成功响应**
 
-  ```
+  ```json
   {
-    "Set": True
+    "set": true
   }
   ```
 
 - **错误响应**:
 
-  | code | info                  | 说明             |
-  | :--- | :-------------------- | ---------------- |
-  | 1    | User is not logged in | 用户未在登陆状态 |
-  | 2    | Group does not exist  | 群组不存在       |
-  | 3    | Permission denied     | 操作权限不足     |
+  | code | info                  | 说明         |
+  | :--- | :-------------------- | ------------ |
+  | 1    | User is not logged in | 用户未登录   |
+  | 2    | Group does not exist  | 群组不存在   |
+  | 3    | Permission denied     | 操作权限不足 |

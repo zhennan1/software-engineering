@@ -10,9 +10,9 @@
 
 ```json
 {
-"code": 0,
-"info": "Succeed",
-"data":{/* 其他字段 */}
+  "code": 0,
+  "info": "Succeed",
+  "data":{/* 其他字段 */}
 }
 ```
 
@@ -54,10 +54,10 @@
 
 ```json
 {
-"username": "Alice", 
-"password": "123456", 
-"email": "example@example.com", 
-"phone": "1234567890" 
+  "username": "Alice", 
+  "password": "123456", 
+  "email": "example@example.com", 
+  "phone": "1234567890" 
 }
 ```
 

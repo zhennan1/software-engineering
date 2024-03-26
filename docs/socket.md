@@ -4,30 +4,15 @@
 
 ### 代码的组成部分和工作流程
 
-1. 设置服务器
+1. 设置服务器：使用Express创建一个web服务器，然后通过http模块将其封装以支持HTTP和WebSocket通信。socketIo(server)初始化了一个新的Socket.IO实例，绑定到之前创建的HTTP服务器上，这允许你在同一个端口上接收WebSocket连接。
 
-使用Express创建一个web服务器，然后通过http模块将其封装以支持HTTP和WebSocket通信。
-socketIo(server)初始化了一个新的Socket.IO实例，绑定到之前创建的HTTP服务器上，这允许你在同一个端口上接收WebSocket连接。
+2. 客户端连接：当客户端通过/路由访问服务器时，服务器通过res.sendFile(__dirname + '/index.html');向客户端发送一个HTML文件。这个HTML文件应该包含用于与服务器建立WebSocket连接的客户端Socket.IO逻辑。io.on('connection', (socket) => {...})监听新的WebSocket连接。每当新用户连接到WebSocket服务器时，这个回调函数就会被执行。
 
-2. 客户端连接
+3. 实时通信：在connection事件的回调中，使用socket.on('chat message', (msg) => {...})监听来自客户端的消息。每当客户端通过WebSocket发送消息时，服务器就会接收到这些消息。使用io.emit('chat message', msg);将接收到的消息广播回所有连接的客户端。这样，任何发送到服务器的消息都会被立即分发给所有监听该消息类型的客户端。
 
-当客户端通过/路由访问服务器时，服务器通过res.sendFile(__dirname + '/index.html');向客户端发送一个HTML文件。这个HTML文件应该包含用于与服务器建立WebSocket连接的客户端Socket.IO逻辑。
+4. 断开连接：socket.on('disconnect', () => {...})监听断开连接事件。当用户关闭网页或断开连接时，服务器会打印一条消息到控制台。
 
-io.on('connection', (socket) => {...})监听新的WebSocket连接。每当新用户连接到WebSocket服务器时，这个回调函数就会被执行。
-
-3. 实时通信
-
-在connection事件的回调中，使用socket.on('chat message', (msg) => {...})监听来自客户端的消息。每当客户端通过WebSocket发送消息时，服务器就会接收到这些消息。
-
-使用io.emit('chat message', msg);将接收到的消息广播回所有连接的客户端。这样，任何发送到服务器的消息都会被立即分发给所有监听该消息类型的客户端。
-
-4. 断开连接
-
-socket.on('disconnect', () => {...})监听断开连接事件。当用户关闭网页或断开连接时，服务器会打印一条消息到控制台。
-
-5. 服务器监听
-
-最后，服务器通过server.listen(PORT, () => {...})在指定的端口上开始监听连接请求。
+5. 服务器监听：最后，服务器通过server.listen(PORT, () => {...})在指定的端口上开始监听连接请求。
 
 ./server.js
 ```js

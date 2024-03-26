@@ -1,5 +1,12 @@
 # Commit Message Guide
 
+**注意：需要先在 https://gitlab.secoder.net/Dream 提出Issue，每次Commit都需要绑定Issue，例如：
+```git commit -m "feat: xxx, close #123"```**
+
+GitHub支持的关键词包括"close"、"closes"、"closed"、"fix"、"fixes"、"fixed"、"resolve"、"resolves"、"resolved"等，使用这些关键词之一加Issue编号可以在该提交被合并到主分支后自动关闭相关Issue。
+
+**注意：每次 commit 不得大于 500 行**
+
 https://developers.google.com/blockly/guides/contribute/get-started/commits
 
 Clear commit messages make pull requests easier to review, and release notes easier to generate. The Blockly project uses conventional commits to help with this.

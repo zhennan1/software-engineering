@@ -15,7 +15,10 @@
 - 李声强：后端
 
 ### 相关链接
- 
+
+2024春《软件工程》常见问题解答：
+https://docs.qq.com/doc/DQlhmQmVEdFp5UVZI
+
 Secoder平台：
 https://sep.secoder.net/#/
 

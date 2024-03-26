@@ -1,3 +1,4 @@
 site_name: Software Engineering
 theme:
   name: material
+  logo: docs/img/logo.png

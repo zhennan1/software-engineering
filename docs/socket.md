@@ -1,6 +1,17 @@
 # WebSocket
 
-基于Node.js、Express和Socket.IO的简单WebSocket聊天应用的demo实现
+## Websocket、React 和 Django
+
+stackoverflow 上的讨论：
+https://stackoverflow.com/questions/71506466/websockets-react-django
+
+一个实现样例：
+https://github.com/pplonski/simple-tasks
+
+一个教程：
+https://blog.logrocket.com/build-chat-application-react-django-channels/
+
+## 基于Node.js、Express和Socket.IO的简单WebSocket聊天应用的demo实现
 
 ### 代码的组成部分和工作流程
 

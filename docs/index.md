@@ -4,12 +4,13 @@
 
 ### 当前任务
 
-建立仓库，部署平台
-阅读文档，理解要求，有疑问联系助教
+- 搭建单元测试框架，后端单测覆盖率达80%
+- 跑通两个用户之间互发消息（私聊）
+- 实现好友关系相关功能
 
 ### 组内分工
 
-- 万振南：沟通协调，测试部署，帮助
+- 万振南：测试部署，数据库，帮助
 - 曾宪伟：前端
 - 李声强：后端
 
@@ -29,6 +30,9 @@ https://zhennan1.github.io/software-engineering/api/
 
 Socket文档：
 https://zhennan1.github.io/software-engineering/socket/
+
+Commit规范：
+https://zhennan1.github.io/software-engineering/commit/
 
 ### 课上指导周次（周二上午，三教2101）
 

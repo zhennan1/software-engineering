@@ -16,26 +16,19 @@
 
 ### 相关链接
 
-2024春《软件工程》常见问题解答：
-https://docs.qq.com/doc/DQlhmQmVEdFp5UVZI
+2024春《软件工程》常见问题解答：[https://docs.qq.com/doc/DQlhmQmVEdFp5UVZI](https://docs.qq.com/doc/DQlhmQmVEdFp5UVZI)
 
-Secoder平台：
-https://sep.secoder.net/#/
+Secoder平台：[https://sep.secoder.net/#/](https://sep.secoder.net/#/)
 
-项目仓库：
-https://gitlab.secoder.net/Dream
+项目仓库：[https://gitlab.secoder.net/Dream](https://gitlab.secoder.net/Dream)
 
-Github仓库：
-https://zhennan1.github.io/software-engineering/
+Github仓库：[https://zhennan1.github.io/software-engineering/](https://zhennan1.github.io/software-engineering/)
 
-API文档：
-https://zhennan1.github.io/software-engineering/api/
+API文档：[https://zhennan1.github.io/software-engineering/api/](https://zhennan1.github.io/software-engineering/api/)
 
-Socket文档：
-https://zhennan1.github.io/software-engineering/socket/
+Socket文档：[https://zhennan1.github.io/software-engineering/socket/](https://zhennan1.github.io/software-engineering/socket/)
 
-Commit规范：
-https://zhennan1.github.io/software-engineering/commit/
+Commit规范：[https://zhennan1.github.io/software-engineering/commit/](https://zhennan1.github.io/software-engineering/commit/)
 
 ### 课上指导周次（周二上午，三教2101）
 

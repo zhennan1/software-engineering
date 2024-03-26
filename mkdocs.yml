@@ -2,4 +2,4 @@ site_name: Software Engineering
 theme:
   name: material
   logo: img/logo.png
-  favicon: img/favicon.png
+  favicon: img/favicon.ico

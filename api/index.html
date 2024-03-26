@@ -1,0 +1,3635 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../commit/">
+      
+      
+      <link rel="icon" href="../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15">
+    
+    
+      
+        <title>API 文档 - Software Engineering</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e359304.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Software Engineering" class="md-header__button md-logo" aria-label="Software Engineering" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Software Engineering
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              API 文档
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Software Engineering" class="md-nav__button md-logo" aria-label="Software Engineering" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    Software Engineering
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    首页
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    API 文档
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    API 文档
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      说明
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      用户管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="用户管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      用户注册
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      用户注销
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      用户登录
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      用户登出
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      编辑信息
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="编辑信息">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      普通信息修改
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      身份认证信息修改
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      好友管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="好友管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      用户查找
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      用户详情
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      发送好友申请
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      查看好友申请
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      回应好友申请
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      删除好友
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      获取好友列表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建分组
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      删除分组
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      查看分组
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      查看分组好友
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      添加好友到分组
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      将好友移除分组
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      会话管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="会话管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      获取所有私聊
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      发起私聊
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      聊天界面
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      发送消息
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      获取所有聊天记录
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      根据时间或成员查询聊天记录
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      删除聊天记录
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      群聊管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="群聊管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      发起群聊
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      获取所有群聊
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      群聊信息展示
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      添加管理员
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      移除管理员
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    <span class="md-ellipsis">
+      转让群主
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    <span class="md-ellipsis">
+      移除群成员
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    <span class="md-ellipsis">
+      邀请用户加入群聊
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_41" class="md-nav__link">
+    <span class="md-ellipsis">
+      邀请加入群聊
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_42" class="md-nav__link">
+    <span class="md-ellipsis">
+      查看邀请请求
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_43" class="md-nav__link">
+    <span class="md-ellipsis">
+      回应进群邀请
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_44" class="md-nav__link">
+    <span class="md-ellipsis">
+      用户退出群聊
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_45" class="md-nav__link">
+    <span class="md-ellipsis">
+      设置群公告
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../commit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Commit Message Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../socket/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WebSocket
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      说明
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      用户管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="用户管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      用户注册
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      用户注销
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      用户登录
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      用户登出
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      编辑信息
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="编辑信息">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      普通信息修改
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      身份认证信息修改
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      好友管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="好友管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      用户查找
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      用户详情
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      发送好友申请
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      查看好友申请
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      回应好友申请
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      删除好友
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      获取好友列表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建分组
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      删除分组
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      查看分组
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      查看分组好友
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      添加好友到分组
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      将好友移除分组
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      会话管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="会话管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      获取所有私聊
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      发起私聊
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      聊天界面
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      发送消息
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      获取所有聊天记录
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      根据时间或成员查询聊天记录
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      删除聊天记录
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      群聊管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="群聊管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      发起群聊
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      获取所有群聊
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      群聊信息展示
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      添加管理员
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      移除管理员
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    <span class="md-ellipsis">
+      转让群主
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    <span class="md-ellipsis">
+      移除群成员
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    <span class="md-ellipsis">
+      邀请用户加入群聊
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_41" class="md-nav__link">
+    <span class="md-ellipsis">
+      邀请加入群聊
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_42" class="md-nav__link">
+    <span class="md-ellipsis">
+      查看邀请请求
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_43" class="md-nav__link">
+    <span class="md-ellipsis">
+      回应进群邀请
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_44" class="md-nav__link">
+    <span class="md-ellipsis">
+      用户退出群聊
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_45" class="md-nav__link">
+    <span class="md-ellipsis">
+      设置群公告
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="api">API 文档</h1>
+<h2 id="_1">说明</h2>
+<ul>
+<li><strong>信息认证</strong>：</li>
+</ul>
+<p>​   在项目中，验证用户身份的方式是需要携带 JWT 令牌。在接下来的API介绍中，每个有“<strong>需要登录</strong>”标志的API都需要将请求头 <code>Authorization</code> 字段设置为 JWT 令牌。</p>
+<ul>
+<li><strong>成功响应格式</strong>：</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;code&quot;: 0,
+  &quot;info&quot;: &quot;Succeed&quot;,
+  &quot;data&quot;:{/* 其他字段 */}
+}
+</code></pre>
+<p>​   后续的成功响应只提供<code>data</code>。</p>
+<ul>
+<li><strong>错误响应格式</strong>：</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;code&quot;: &quot;*&quot;,
+  &quot;info&quot;: &quot;[Some message]&quot;
+}
+</code></pre>
+<p>​   后续的错误响应提供对应的<code>code</code>，<code>info</code>和对应的说明。</p>
+<ul>
+<li><strong>异常状态码</strong></li>
+</ul>
+<p>成功响应的状态码为200，其余通用的异常返回值：</p>
+<table>
+<thead>
+<tr>
+<th>HTTP状态码</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td>通用错误</td>
+</tr>
+<tr>
+<td>401</td>
+<td>鉴权失败：用户未登陆</td>
+</tr>
+<tr>
+<td>405</td>
+<td>请求方法不允许</td>
+</tr>
+<tr>
+<td>500</td>
+<td>服务端其他内部错误</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_2">用户管理</h2>
+<h3 id="_3">用户注册</h3>
+<ul>
+<li>
+<p><strong>URL</strong>: /user/register</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于新用户创建账户。</p>
+</li>
+<li>
+<p><strong>请求方式</strong>: POST</p>
+</li>
+<li>
+<p><strong>请求体</strong>：</p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;username&quot;: &quot;Alice&quot;, 
+  &quot;password&quot;: &quot;123456&quot;, 
+  &quot;email&quot;: &quot;example@example.com&quot;, 
+  &quot;phone&quot;: &quot;1234567890&quot; 
+}
+</code></pre>
+<p>上述字段的说明为：</p>
+<ul>
+<li><code>userName</code>。表示用户名，应当为非空字符串，且长度不大于 20,不能与其他用户重复。</li>
+<li><code>password</code>。表示用户的密码，应当为非空字符串，且长度不大于 20。</li>
+<li><code>email</code>：表示用户的电子邮件地址，应当为非空字符串，且符合标准的电子邮件地址格式，长度不应超过 255 个字符。</li>
+<li>
+<p><code>phone</code>：表示用户的手机号码，应当为非空字符串，且只包含数字字符，长度不应超过 20 个字符。</p>
+</li>
+<li>
+<p><strong>成功响应</strong></p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;created&quot;: true,
+  &quot;id&quot;:1//用户id
+}
+</code></pre>
+<ul>
+<li><strong>错误响应</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Username already exists</td>
+<td>用户名已经存在</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Invalid username</td>
+<td>用户名不合法</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Invalid password</td>
+<td>密码不合法</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">用户注销</h3>
+<blockquote>
+<p>[!NOTE]</p>
+<p>需要登录</p>
+</blockquote>
+<ul>
+<li>
+<p><strong>URL</strong>: /user/logoff</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于用户注销账户。</p>
+</li>
+<li>
+<p><strong>请求方式</strong>: POST</p>
+</li>
+<li>
+<p><strong>成功响应</strong></p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;deleted&quot;: true
+}
+</code></pre>
+<ul>
+<li><strong>错误响应</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">User is not logged in</td>
+<td>用户未登录</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_5">用户登录</h3>
+<ul>
+<li>
+<p><strong>URL</strong>: /user/login</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于用户登录账户。</p>
+</li>
+<li>
+<p><strong>请求方式</strong>: POST</p>
+</li>
+<li>
+<p><strong>请求体</strong>：</p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;username&quot;: &quot;Alice&quot;, 
+  &quot;password&quot;: &quot;123456&quot;, 
+}
+</code></pre>
+<ul>
+<li><strong>成功响应</strong></li>
+</ul>
+<pre><code class="language-json">{
+  &quot;logged in&quot;: true,
+  &quot;token&quot;: &quot;***.***.***&quot;  //JWT
+}
+</code></pre>
+<ul>
+<li><strong>错误响应</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">User does not exist</td>
+<td>用户不存在</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Incorrect password</td>
+<td>密码错误</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_6">用户登出</h3>
+<blockquote>
+<p>[!NOTE]</p>
+<p>需要登录</p>
+</blockquote>
+<ul>
+<li>
+<p><strong>URL</strong>: /user/logout</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于用户登出账户。</p>
+</li>
+<li>
+<p><strong>请求方式</strong>: POST</p>
+</li>
+<li>
+<p><strong>成功响应</strong></p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;logged out&quot;: true
+}
+</code></pre>
+<ul>
+<li><strong>错误响应</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">User is not logged in</td>
+<td>用户未登录</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_7">编辑信息</h2>
+<blockquote>
+<p>[!NOTE]</p>
+<p>需要登录</p>
+</blockquote>
+<h3 id="_8">普通信息修改</h3>
+<ul>
+<li>
+<p><strong>URL</strong>: /user/update_normal_info</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于用户修改个人用户普通信息。</p>
+</li>
+<li>
+<p><strong>请求方法</strong>: PUT</p>
+</li>
+<li>
+<p><strong>请求体</strong>：</p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;username&quot;: &quot;Alice&quot;, 
+  &quot;avatar_url&quot;: &quot;http://example.com/media/avatar/new_avatar.jpg&quot;
+}
+</code></pre>
+<ul>
+<li>
+<p><code>avatar_url</code>表示用户头像的链接。</p>
+</li>
+<li>
+<p><strong>成功响应</strong></p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;update&quot;: true,
+}
+</code></pre>
+<ul>
+<li><strong>错误响应</strong>:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">User is not logged in</td>
+<td>用户未登录</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Username already exists</td>
+<td>用户名已经存在</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Invalid username</td>
+<td>新用户名不合法</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_9">身份认证信息修改</h3>
+<ul>
+<li>
+<p><strong>URL</strong>: /user/update_auth_info</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于用户修改用户身份认证信息。</p>
+</li>
+<li>
+<p><strong>请求方法</strong>: PUT</p>
+</li>
+<li>
+<p><strong>请求体</strong>：</p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;new_password&quot;: &quot;123456&quot;, 
+  &quot;email&quot;: &quot;example@example.com&quot;, 
+  &quot;phone&quot;: &quot;1234567890&quot; ,
+  &quot;old_password&quot;:&quot;1234567&quot;
+}
+</code></pre>
+<ul>
+<li>
+<p>需要提供旧密码进行验证。</p>
+</li>
+<li>
+<p><strong>成功响应</strong></p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;update&quot;: true,
+}
+</code></pre>
+<ul>
+<li><strong>错误响应</strong>:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">User is not logged in</td>
+<td>用户未登录</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Wrong old password</td>
+<td>旧密码错误</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Invalid password</td>
+<td>新密码不合法</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_10">好友管理</h2>
+<blockquote>
+<p>[!NOTE]</p>
+<p>需要登录</p>
+</blockquote>
+<h3 id="_11">用户查找</h3>
+<ul>
+<li>
+<p><strong>URL</strong>: /user/friend/search</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于用户查找其他⽤⼾。</p>
+</li>
+<li>
+<p><strong>请求方法</strong>: POST</p>
+</li>
+<li>
+<p><strong>请求体</strong>：</p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;query&quot;: &quot;search_query&quot;
+}
+</code></pre>
+<ul>
+<li><strong>成功响应</strong></li>
+</ul>
+<pre><code class="language-json">{
+  &quot;results&quot;: [
+    {
+      &quot;user_id&quot;: 1,
+      &quot;username&quot;: &quot;example_user&quot;,
+      &quot;avatar_url&quot;: &quot;http://example.com/avatar.jpg&quot;
+    },
+    {
+      &quot;user_id&quot;: 2,
+      &quot;username&quot;: &quot;another_user&quot;,
+      &quot;avatar_url&quot;: &quot;http://example.com/avatar2.jpg&quot;
+    },
+    // ...
+  ]
+}
+</code></pre>
+<ul>
+<li><strong>错误响应</strong>:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">User is not logged in</td>
+<td>用户未登录</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_12">用户详情</h3>
+<ul>
+<li>
+<p><strong>URL</strong>: /user/profile/{user_id}</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于获取特定用户的详细信息。</p>
+</li>
+<li>
+<p><strong>请求方法</strong>: GET</p>
+</li>
+<li>
+<p><strong>成功响应</strong></p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;user_id&quot;: 1,
+  &quot;username&quot;: &quot;example_user&quot;,
+  &quot;email&quot;: &quot;example@example.com&quot;,
+  &quot;phone&quot;: &quot;1234567890&quot;,
+  &quot;avatar_url&quot;: &quot;http://example.com/avatar.jpg&quot;,
+  &quot;bio&quot;: &quot;This is a short bio of the user.&quot;
+}
+</code></pre>
+<ul>
+<li>
+<p><code>bio</code> 是用户的个人简介。</p>
+</li>
+<li>
+<p><strong>错误响应</strong>:</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th>info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td>User is not logged in</td>
+<td>用户未登录</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td>User not found</td>
+<td>未找到指定用户</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_13">发送好友申请</h3>
+<ul>
+<li>
+<p><strong>URL</strong>: /user/friend/request</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于用户发送添加好友申请。</p>
+</li>
+<li>
+<p><strong>请求方法</strong>: POST</p>
+</li>
+<li>
+<p><strong>请求体</strong>：</p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;recipient_id&quot;: 12345
+}
+</code></pre>
+<ul>
+<li>
+<p><code>recipient_id</code>是接收者的用户ID，即申请添加为好友的目标用户的ID</p>
+</li>
+<li>
+<p><strong>成功响应</strong></p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;sent&quot;: true
+}
+</code></pre>
+<ul>
+<li><strong>错误响应</strong>:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">User is not logged in</td>
+<td>用户未登录</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Target does not exist</td>
+<td>目标不存在</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Already friends</td>
+<td>已经是好友</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">The request already exists</td>
+<td>请求已存在</td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Self request detected</td>
+<td>不能发送给自己的请求</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_14">查看好友申请</h3>
+<ul>
+<li>
+<p><strong>URL</strong>: /user/friend/requests</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于用户查看收到的好友申请。</p>
+</li>
+<li>
+<p><strong>请求方法</strong>: GET</p>
+</li>
+<li>
+<p><strong>成功响应</strong></p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;requests&quot;: [
+    {
+      &quot;request_id&quot;: 123,
+      &quot;sender_id&quot;: 456,
+      &quot;sender_name&quot;: &quot;SenderUsername&quot;,
+      &quot;sender_avatar&quot;: &quot;http://example.com/avatar.jpg&quot;,
+      &quot;sent_time&quot;: &quot;2024-03-21 12:00:00&quot;
+    },
+    // ...
+  ]
+}
+</code></pre>
+<ul>
+<li><code>request_id</code>：申请ID。</li>
+<li><code>sender_id</code>：发送者的用户ID。</li>
+<li><code>sender_name</code>：发送者的用户名。</li>
+<li><code>sender_avatar</code>：发送者的头像链接。</li>
+<li>
+<p><code>sent_time</code>：申请发送时间。</p>
+</li>
+<li>
+<p><strong>错误响应</strong>:</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">User is not logged in</td>
+<td>用户未登录</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_15">回应好友申请</h3>
+<ul>
+<li>
+<p><strong>URL</strong>: /user/respond_friend_request</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于用户回应好友申请。</p>
+</li>
+<li>
+<p><strong>请求方法</strong>: POST</p>
+</li>
+<li>
+<p><strong>请求体</strong>：</p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;request_id&quot;: &quot;申请ID&quot;,
+  &quot;response&quot;: &quot;accept&quot; //或 &quot;reject&quot;
+}
+</code></pre>
+<ul>
+<li><strong>成功响应</strong></li>
+</ul>
+<pre><code class="language-json">{
+  &quot;responded&quot;: true
+}
+</code></pre>
+<ul>
+<li><strong>错误响应</strong>:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">User is not logged in</td>
+<td>用户未登录</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">The target user no longer exists</td>
+<td>目标用户已不存在</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_16">删除好友</h3>
+<ul>
+<li>
+<p><strong>URL</strong>: /user/delete_friend</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于用户删除好友。</p>
+</li>
+<li>
+<p><strong>请求方法</strong>: POST</p>
+</li>
+<li>
+<p><strong>请求体</strong>：</p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;user_id&quot;:&quot;好友ID&quot;
+}
+</code></pre>
+<ul>
+<li><strong>成功响应</strong></li>
+</ul>
+<pre><code class="language-json">{
+  &quot;delete&quot;: true
+}
+</code></pre>
+<ul>
+<li><strong>错误响应</strong>:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">User is not logged in</td>
+<td>用户未登录</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Target does not exist</td>
+<td>目标不存在</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Not friends</td>
+<td>对方不是好友</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_17">获取好友列表</h3>
+<ul>
+<li>
+<p><strong>URL</strong>: /user/get_friends</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于用户获取所有好友。</p>
+</li>
+<li>
+<p><strong>请求方法</strong>: GET</p>
+</li>
+<li>
+<p><strong>成功响应</strong></p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;friends&quot;: [
+        {
+            &quot;friend_id&quot;: &quot;好友ID&quot;,
+            &quot;username&quot;: &quot;好友用户名&quot;,
+            &quot;avatar_url&quot;: &quot;好友头像URL&quot;
+        },
+    // ...
+    ]
+}
+</code></pre>
+<ul>
+<li><strong>错误响应</strong>:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">User is not logged in</td>
+<td>用户未登录</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_18">创建分组</h3>
+<ul>
+<li>
+<p><strong>URL</strong>: /user/create_friend_group</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于用户创建好友分组。</p>
+</li>
+<li>
+<p><strong>请求方法</strong>: POST</p>
+</li>
+<li>
+<p><strong>请求体</strong>：</p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;friend_group_name&quot;:&quot;classmate&quot;
+}
+</code></pre>
+<ul>
+<li>
+<p><code>friend_group_name</code>代表分组名，非空字符串，长度不大于20个字符,不能重复。</p>
+</li>
+<li>
+<p><strong>成功响应</strong></p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;friend_group_id&quot;: &quot;分组的ID&quot;
+}
+</code></pre>
+<ul>
+<li><strong>错误响应</strong>:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">User is not logged in</td>
+<td>用户未登录</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">The friend group name is invalid</td>
+<td>分组名不合法</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_19">删除分组</h3>
+<ul>
+<li>
+<p><strong>URL</strong>: /user/delete_friend_group</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于用户删除好友分组。</p>
+</li>
+<li>
+<p><strong>请求方法</strong>: POST</p>
+</li>
+<li>
+<p><strong>请求体</strong>：</p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;friend_group_id&quot;:&quot;分组的ID&quot;
+}
+</code></pre>
+<ul>
+<li><strong>成功响应</strong></li>
+</ul>
+<pre><code class="language-json">{
+  &quot;deleted&quot;: true
+}
+</code></pre>
+<ul>
+<li><strong>错误响应</strong>:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">User is not logged in</td>
+<td>用户未登录</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">The friend group does not exist</td>
+<td>分组不存在</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_20">查看分组</h3>
+<ul>
+<li>
+<p><strong>URL</strong>: /user/get_friend_groups</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于用户获取所有好友分组。</p>
+</li>
+<li>
+<p><strong>请求方法</strong>: GET</p>
+</li>
+<li>
+<p><strong>成功响应</strong></p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;friend_groups&quot;: [
+    {
+      &quot;friend_group_id&quot;: &quot;分组ID&quot;,
+      &quot;friend_group_name&quot;: &quot;分组名称&quot;
+    },
+    // ...
+  ]
+}
+</code></pre>
+<ul>
+<li><strong>错误响应</strong>:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">User is not logged in</td>
+<td>用户未登录</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_21">查看分组好友</h3>
+<ul>
+<li>
+<p><strong>URL</strong>: /user/friend_groups/{friend_group_id}</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于用户获取所有好友分组。</p>
+</li>
+<li>
+<p><strong>请求方法</strong>: GET</p>
+</li>
+<li>
+<p><strong>请求体</strong>：</p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;friend_group_id&quot;:&quot;分组ID&quot;
+}
+</code></pre>
+<ul>
+<li><strong>成功响应</strong></li>
+</ul>
+<pre><code class="language-json">{
+  &quot;friends&quot;: [
+    {
+      &quot;user_id&quot;: &quot;用户ID&quot;,
+      &quot;username&quot;: &quot;好友的用户名&quot;,
+      &quot;avatar_url&quot;: &quot;好友的头像链接&quot;
+    },
+    // ...
+  ]
+}
+</code></pre>
+<ul>
+<li><strong>错误响应</strong>:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">User is not logged in</td>
+<td>用户未登录</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">The friend group does not exist</td>
+<td>分组不存在</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_22">添加好友到分组</h3>
+<ul>
+<li>
+<p><strong>URL</strong>: /user/add_friend_to_friend_group</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于用户将好友添加到某一指定的分组。</p>
+</li>
+<li>
+<p><strong>请求方法</strong>: POST</p>
+</li>
+<li>
+<p><strong>请求体</strong>：</p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;user_id&quot;: &quot;对方的用户ID&quot;,
+  &quot;friend_group_id&quot;: &quot;分组的ID&quot;
+}
+</code></pre>
+<ul>
+<li><strong>成功响应</strong></li>
+</ul>
+<pre><code class="language-json">{
+  &quot;added&quot;: true
+}
+</code></pre>
+<ul>
+<li><strong>错误响应</strong>:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">User is not logged in</td>
+<td>用户未登录</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">The friend group does not exist</td>
+<td>分组不存在</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Not friends</td>
+<td>对方不是好友</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Already in this friend group</td>
+<td>对方已经在该分组内</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_23">将好友移除分组</h3>
+<ul>
+<li>
+<p><strong>URL</strong>: /user/delete_friend_from_friend_group</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于用户将好友从分组移出。</p>
+</li>
+<li>
+<p><strong>请求方法</strong>: POST</p>
+</li>
+<li>
+<p><strong>请求体</strong>：</p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;user_id&quot;: &quot;对方的id&quot;,
+  &quot;friend_group_id&quot;: &quot;分组id&quot;
+}
+</code></pre>
+<ul>
+<li><strong>成功响应</strong></li>
+</ul>
+<pre><code class="language-json">{
+  &quot;deleted&quot;: true
+}
+</code></pre>
+<ul>
+<li><strong>错误响应</strong>:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">User is not logged in</td>
+<td>用户未登录</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">The  friend group does not exist</td>
+<td>分组不存在</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Not friends</td>
+<td>对方不是好友</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">The user is not in the  friend group</td>
+<td>对方不在该分组内</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_24">会话管理</h2>
+<blockquote>
+<p>[!NOTE]</p>
+<p>需要登录</p>
+</blockquote>
+<h3 id="_25">获取所有私聊</h3>
+<ul>
+<li>
+<p><strong>URL</strong>: /user/get_private_conversations</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于用户获取所有的私人聊天。</p>
+</li>
+<li>
+<p><strong>请求方法</strong>:GET</p>
+</li>
+<li>
+<p><strong>成功响应</strong></p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;conversations&quot;: [
+    {
+      &quot;conversation_id&quot;: &quot;会话ID&quot;,
+      &quot;is_private&quot;: true,
+      &quot;friend_id&quot;: &quot;对方ID&quot;,
+      &quot;friend_name&quot;: &quot;对方用户名&quot;,
+      &quot;friend_avatar&quot;: &quot;对方头像链接&quot;,
+      &quot;not_read&quot;: &quot;未读消息数目&quot;,
+      &quot;disabled&quot;: &quot;失效标志&quot;
+    },
+    // ...
+  ]
+}
+</code></pre>
+<ul>
+<li><strong>错误响应</strong>:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">User is not logged in</td>
+<td>用户未登录</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_26">发起私聊</h3>
+<ul>
+<li>
+<p><strong>URL</strong>: /user/create_private_conversation</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于用户获取和某朋友的私聊。</p>
+</li>
+<li>
+<p><strong>请求方法</strong>:POST</p>
+</li>
+<li>
+<p><strong>请求体</strong>：</p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;friend_id&quot;:&quot;好友的id&quot;
+}
+</code></pre>
+<ul>
+<li><strong>成功响应</strong></li>
+</ul>
+<pre><code class="language-json">{
+  &quot;conversation_id&quot;: &quot;会话id&quot;,
+  &quot;friend_name&quot;: &quot;好友用户名&quot;,
+  &quot;friend_avatar&quot;: &quot;好友头像&quot;
+}
+</code></pre>
+<ul>
+<li><strong>错误响应</strong>:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">User is not logged in</td>
+<td>用户未登录</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Target does not exist</td>
+<td>目标不存在</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Not friends</td>
+<td>对方不是好友</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_27">聊天界面</h3>
+<ul>
+<li>
+<p><strong>URL</strong>: /user/conversation/{conversation_id}</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于用户获取和某个朋友或群聊的聊天界面。</p>
+</li>
+<li>
+<p><strong>请求方法</strong>:GET</p>
+</li>
+<li>
+<p><strong>成功响应</strong></p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;messages&quot;: [
+    {
+      &quot;msg_id&quot;: &quot;消息ID&quot;,
+      &quot;msg_body&quot;: &quot;消息体&quot;,
+      &quot;sender_id&quot;: &quot;发送者ID&quot;,
+      &quot;sender_name&quot;: &quot;发送者用户名&quot;,
+      &quot;sender_avatar&quot;: &quot;发送者头像链接&quot;,
+      &quot;create_time&quot;: &quot;创建时间&quot;,
+      &quot;reply_id&quot;: &quot;回复消息ID&quot;,
+      &quot;reply_content&quot;: &quot;回复内容&quot;,
+      &quot;replied_times&quot;: &quot;被回复次数&quot;,
+      &quot;read_status&quot;: &quot;是否已读&quot;,
+      &quot;read_by&quot;: [&quot;已读用户ID&quot;]
+    },
+    // ...
+  ]
+}
+</code></pre>
+<ul>
+<li><code>reply_id</code>是所回复消息的id。</li>
+<li>
+<p><code>read_by</code>是列表，阅读此条消息群成员的id。</p>
+</li>
+<li>
+<p><strong>错误响应</strong>:</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">User is not logged in</td>
+<td>用户未登录</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Target does not exist</td>
+<td>目标会话不存在</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">User is not in session</td>
+<td>用户不在会话中</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_28">发送消息</h3>
+<ul>
+<li>
+<p><strong>URL</strong>: /user/send_mesage</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于用户在某个会话发送消息。</p>
+</li>
+<li>
+<p><strong>请求方法</strong>:POST</p>
+</li>
+<li>
+<p><strong>请求体</strong>：</p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;conversation_id&quot;: &quot;会话ID&quot;,
+  &quot;content&quot;: &quot;消息内容&quot;
+}
+</code></pre>
+<ul>
+<li><strong>成功响应</strong></li>
+</ul>
+<pre><code class="language-json">{
+  &quot;message_id&quot;: &quot;消息ID&quot;
+}
+</code></pre>
+<ul>
+<li><strong>错误响应</strong>:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">User is not logged in</td>
+<td>用户未登录</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Target does not exist</td>
+<td>目标会话不存在</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">User is not in session</td>
+<td>用户不在会话中</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_29">获取所有聊天记录</h3>
+<ul>
+<li>
+<p><strong>URL</strong>: /user/records/{conversation_id}</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于用户获取某一会话的所有聊天记录。</p>
+</li>
+<li>
+<p><strong>请求方法</strong>:GET</p>
+</li>
+<li>
+<p><strong>成功响应</strong></p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;messages&quot;: [
+    {
+      &quot;msg_id&quot;: &quot;消息ID&quot;,
+      &quot;msg_body&quot;: &quot;消息体&quot;,
+      &quot;sender_id&quot;: &quot;发送者ID&quot;,
+      &quot;sender_name&quot;: &quot;发送者用户名&quot;,
+      &quot;sender_avatar&quot;: &quot;发送者头像&quot;,
+      &quot;create_time&quot;: &quot;创建时间&quot;,
+      &quot;reply_id&quot;: &quot;回复消息ID&quot;,
+      &quot;reply_content&quot;: &quot;回复内容&quot;
+    },
+    // ...
+  ]
+}
+</code></pre>
+<ul>
+<li><strong>错误响应</strong>:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">User is not logged in</td>
+<td>用户未登录</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Target does not exist</td>
+<td>目标会话不存在</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">User is not in session</td>
+<td>用户不在会话中</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_30">根据时间或成员查询聊天记录</h3>
+<ul>
+<li>
+<p><strong>URL</strong>: /user/filter_records</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于用户根据时间或成员获取某一会话的所有聊天记录。</p>
+</li>
+<li>
+<p><strong>请求方法</strong>：POST</p>
+</li>
+<li>
+<p><strong>请求体</strong>：</p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;conversation_id&quot;: 会话id,
+  &quot;content&quot;: 消息内容,
+  &quot;start_time&quot;: 开始时间,
+  &quot;end_time&quot;: 结束时间,
+  &quot;sender_id&quot;: 发送成员的id
+}
+</code></pre>
+<ul>
+<li><strong>成功响应</strong></li>
+</ul>
+<pre><code class="language-json">{
+  &quot;messages&quot;: [
+    {
+      &quot;msg_id&quot;: &quot;消息ID&quot;,
+      &quot;msg_body&quot;: &quot;消息体&quot;,
+      &quot;sender_id&quot;: &quot;发送者ID&quot;,
+      &quot;sender_name&quot;: &quot;发送者用户名&quot;,
+      &quot;sender_avatar&quot;: &quot;发送者头像&quot;,
+      &quot;create_time&quot;: &quot;创建时间&quot;,
+      &quot;reply_id&quot;: &quot;回复消息ID&quot;,
+      &quot;reply_content&quot;: &quot;回复内容&quot;
+    },
+    // ...
+  ]
+}
+</code></pre>
+<ul>
+<li><strong>错误响应</strong>:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">User is not logged in</td>
+<td>用户未登录</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Target does not exist</td>
+<td>目标会话不存在</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">User is not in session</td>
+<td>用户不在会话中</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_31">删除聊天记录</h3>
+<ul>
+<li>
+<p><strong>URL</strong>: /user/delete_records</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于用户删除某一会话的聊天记录。</p>
+</li>
+<li>
+<p><strong>请求方法</strong>: POST</p>
+</li>
+<li>
+<p><strong>请求体</strong>：</p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;conversation_id&quot;: &quot;会话id&quot;
+}
+</code></pre>
+<ul>
+<li><strong>成功响应</strong></li>
+</ul>
+<pre><code class="language-json">{
+  &quot;delete&quot;: true
+}
+</code></pre>
+<ul>
+<li><strong>错误响应</strong>:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">User is not logged in</td>
+<td>用户未登录</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Target does not exist</td>
+<td>目标会话不存在</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">User is not in session</td>
+<td>用户不在会话</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_32">群聊管理</h2>
+<blockquote>
+<p>[!NOTE]</p>
+<p>需要登录</p>
+</blockquote>
+<h3 id="_33">发起群聊</h3>
+<ul>
+<li>
+<p><strong>URL</strong>: /user/create_group_conversation</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于用户发起群聊。</p>
+</li>
+<li>
+<p><strong>请求方法</strong>:POST</p>
+</li>
+<li>
+<p><strong>请求体</strong>：</p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;members_id&quot;: [&quot;用户ID1&quot;, &quot;用户ID2&quot;, &quot;...&quot;],
+  &quot;name&quot;: &quot;群聊名称&quot;
+}
+</code></pre>
+<ul>
+<li>
+<p><code>members</code>是列表类型，包含（除用户自身以外）群聊成员的id列表。</p>
+</li>
+<li>
+<p><strong>成功响应</strong></p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;conversation_id&quot;: &quot;会话ID&quot;,
+  &quot;group_id&quot;: &quot;群ID&quot;,
+  &quot;group_name&quot;: &quot;群聊名称&quot;,
+  &quot;group_avatar&quot;: &quot;群聊头像链接&quot;
+}
+</code></pre>
+<ul>
+<li><strong>错误响应</strong>:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">User is not logged in</td>
+<td>用户未登录</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Target does not exist</td>
+<td>有目标不存在</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Not friends</td>
+<td>有目标不是好友</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_34">获取所有群聊</h3>
+<ul>
+<li>
+<p><strong>URL</strong>: /user/get_group_conversation</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于用户获取所有的群聊。</p>
+</li>
+<li>
+<p><strong>请求方法</strong>:GET</p>
+</li>
+<li>
+<p><strong>成功响应</strong></p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;conversations&quot;: [
+    {
+      &quot;id&quot;: &quot;会话ID&quot;,
+      &quot;is_private&quot;: false,
+      &quot;group_name&quot;: &quot;群聊名称&quot;,
+      &quot;group_avatar&quot;: &quot;群聊头像链接&quot;,
+      &quot;not_read&quot;: &quot;未读消息数目&quot;,
+      &quot;disabled&quot;: &quot;失效标志&quot;
+    },
+    // ...
+  ]
+}
+</code></pre>
+<ul>
+<li><strong>错误响应</strong>:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">User is not logged in</td>
+<td>用户未登录</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_35">群聊信息展示</h3>
+<ul>
+<li>
+<p><strong>URL</strong>: /user/conversation/{group_id}/info</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于获取特定群聊的基本信息。</p>
+</li>
+<li>
+<p><strong>请求方法</strong>: GET</p>
+</li>
+<li>
+<p><strong>成功响应</strong></p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;group_id&quot;: &quot;群组ID&quot;,
+  &quot;group_name&quot;: &quot;群聊名称&quot;,
+  &quot;owner&quot;: {
+    &quot;user_id&quot;: &quot;群主ID&quot;,
+    &quot;username&quot;: &quot;群主用户名&quot;,
+    &quot;avatar&quot;: &quot;群主头像链接&quot;
+  },
+  &quot;administrators&quot;: [
+    {
+      &quot;user_id&quot;: &quot;管理员ID&quot;,
+      &quot;username&quot;: &quot;管理员用户名&quot;,
+      &quot;avatar&quot;: &quot;管理员头像链接&quot;
+    },
+    // ...
+  ],
+  &quot;members&quot;: [
+    {
+      &quot;user_id&quot;: &quot;成员ID&quot;,
+      &quot;username&quot;: &quot;成员用户名&quot;,
+      &quot;avatar&quot;: &quot;成员头像链接&quot;
+    },
+    // ...
+  ],
+  &quot;announcement&quot;: &quot;历史群公告&quot;
+}
+</code></pre>
+<p><strong>错误响应</strong>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">User is not logged in</td>
+<td>用户未登录</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Target does not exist</td>
+<td>群聊不存在</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">User is not in session</td>
+<td>用户不在会话中</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_36">添加管理员</h3>
+<ul>
+<li>
+<p><strong>URL</strong>: /user/group/add_admin</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于群主将群成员提升为管理员。</p>
+</li>
+<li>
+<p><strong>请求方法</strong>: POST</p>
+</li>
+<li>
+<p><strong>请求体</strong>：</p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;group_id&quot;: &quot;群组ID&quot;,
+  &quot;member_id&quot;: &quot;成员ID&quot;
+}
+</code></pre>
+<ul>
+<li><strong>成功响应</strong></li>
+</ul>
+<pre><code class="language-json">{
+  &quot;added&quot;: true
+}
+</code></pre>
+<ul>
+<li><strong>错误响应</strong>:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">User is not logged in</td>
+<td>用户未登录</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Group does not exist</td>
+<td>群组不存在</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Member does not exist</td>
+<td>成员不存在</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Member is already admin</td>
+<td>成员已经是管理员</td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Permission denied</td>
+<td>操作权限不足</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_37">移除管理员</h3>
+<ul>
+<li>
+<p><strong>URL</strong>: /user/group/remove_admin</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于群主将管理员移除出管理员角色。</p>
+</li>
+<li>
+<p><strong>请求方法</strong>: POST</p>
+</li>
+<li>
+<p><strong>请求体</strong>：</p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;group_id&quot;: &quot;群组ID&quot;,
+  &quot;admin_id&quot;: &quot;管理员ID&quot;
+}
+</code></pre>
+<ul>
+<li><strong>成功响应</strong></li>
+</ul>
+<pre><code class="language-json">{
+  &quot;removed&quot;: true
+}
+</code></pre>
+<ul>
+<li><strong>错误响应</strong>:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">User is not logged in</td>
+<td>用户未登录</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Group does not exist</td>
+<td>群组不存在</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Admin does not exist</td>
+<td>管理员不存在</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Member is not admin</td>
+<td>目标不是管理员</td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Permission denied</td>
+<td>操作权限不足</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_38">转让群主</h3>
+<ul>
+<li>
+<p><strong>URL</strong>: /user/group/transfer_ownership</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于群主将群的所有权转让给另一个群成员。</p>
+</li>
+<li>
+<p><strong>请求方法</strong>: POST</p>
+</li>
+<li>
+<p><strong>请求体</strong>：</p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;group_id&quot;: &quot;群组ID&quot;,
+  &quot;new_owner_id&quot;: &quot;新群主ID&quot;
+}
+</code></pre>
+<ul>
+<li><strong>成功响应</strong></li>
+</ul>
+<pre><code>
+{
+  &quot;transferred&quot;: true
+}
+</code></pre>
+<ul>
+<li><strong>错误响应</strong>:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">User is not logged in</td>
+<td>用户未登录</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Group does not exist</td>
+<td>群组不存在</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Member does not exist</td>
+<td>目标不存在</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Permission denied</td>
+<td>操作权限不足</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_39">移除群成员</h3>
+<ul>
+<li>
+<p><strong>URL</strong>: /user/group/remove_member</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于群主或管理员移除群成员。</p>
+</li>
+<li>
+<p><strong>请求方法</strong>: POST</p>
+</li>
+<li>
+<p><strong>请求体</strong>：</p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;group_id&quot;: &quot;群组ID&quot;,
+  &quot;member_id&quot;: &quot;成员ID&quot;
+}
+</code></pre>
+<ul>
+<li><strong>成功响应</strong></li>
+</ul>
+<pre><code class="language-json">{
+  &quot;removed&quot;: true
+}
+</code></pre>
+<ul>
+<li><strong>错误响应</strong>:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">User is not logged in</td>
+<td>用户未登录</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Group does not exist</td>
+<td>群组不存在</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Member is not in the group</td>
+<td>成员不在群组中</td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Permission denied</td>
+<td>操作权限不足</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_40">邀请用户加入群聊</h3>
+<ul>
+<li>
+<p><strong>URL</strong>: /user/group/invite_member</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于管理员或群主邀请用户加入群聊。</p>
+</li>
+<li>
+<p><strong>请求方法</strong>: POST</p>
+</li>
+<li>
+<p><strong>请求体</strong>：</p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;group_id&quot;: &quot;群组ID&quot;,
+  &quot;invited_user_id&quot;: &quot;被邀请用户ID&quot;
+}
+</code></pre>
+<ul>
+<li><strong>成功响应</strong></li>
+</ul>
+<pre><code class="language-json">{
+  &quot;invited&quot;: true
+}
+</code></pre>
+<ul>
+<li><strong>错误响应</strong>:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">User is not logged in</td>
+<td>用户未登录</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Group does not exist</td>
+<td>群组不存在</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">User does not exist</td>
+<td>用户不存在</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">User is already in the group</td>
+<td>用户已经在群组中</td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Permission denied</td>
+<td>操作权限不足</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_41">邀请加入群聊</h3>
+<ul>
+<li>
+<p><strong>URL</strong>: /user/group/invite</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于群成员邀请用户加入群聊，需要群主或管理员审核。</p>
+</li>
+<li>
+<p><strong>请求方法</strong>: POST</p>
+</li>
+<li>
+<p><strong>请求体</strong>：</p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;group_id&quot;: &quot;群组ID&quot;,
+  &quot;invited_user_id&quot;: &quot;被邀请用户ID&quot;
+}
+</code></pre>
+<ul>
+<li><strong>成功响应</strong></li>
+</ul>
+<pre><code class="language-json">{
+  &quot;invited&quot;: true
+}
+</code></pre>
+<ul>
+<li><strong>错误响应</strong>:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">User is not logged in</td>
+<td>用户未登录</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Group does not exist</td>
+<td>群组不存在</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">User does not exist</td>
+<td>用户不存在</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Invitation already sent</td>
+<td>邀请已发送</td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Permission denied</td>
+<td>操作权限不足</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_42">查看邀请请求</h3>
+<ul>
+<li>
+<p><strong>URL</strong>: /user/group/invitations</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于管理员或群主查看所有待审核的邀请请求。</p>
+</li>
+<li>
+<p><strong>请求方法</strong>: POST</p>
+</li>
+<li>
+<p><strong>请求体</strong>：</p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;group_id&quot;: &quot;群组ID&quot;
+}
+</code></pre>
+<ul>
+<li><strong>成功响应</strong></li>
+</ul>
+<pre><code class="language-json">{
+  &quot;invitations&quot;: [
+    {
+      &quot;invitation_id&quot;: &quot;邀请ID&quot;,
+      &quot;inviter&quot;: {
+    &quot;user_id&quot;: &quot;邀请者ID&quot;,
+    &quot;name&quot;: &quot;邀请者用户名&quot;,
+    &quot;avatar&quot;: &quot;邀请者头像链接&quot;
+  },
+  &quot;invitee&quot;: {
+    &quot;user_id&quot;: &quot;被邀请者ID&quot;,
+    &quot;name&quot;: &quot;被邀请者用户名&quot;,
+    &quot;avatar&quot;: &quot;被邀请者头像链接&quot;
+  },
+  &quot;status&quot;: &quot;邀请状态&quot;,
+  &quot;create_time&quot;: &quot;创建时间&quot;
+    }
+  // ...
+  ]
+}
+</code></pre>
+<p><strong>邀请状态说明</strong>:</p>
+<ul>
+<li>pending: 待处理</li>
+<li>accepted: 已接受</li>
+<li>
+<p>rejected: 已拒绝</p>
+</li>
+<li>
+<p><strong>错误响应</strong>:</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">User is not logged in</td>
+<td>用户未登录</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Group does not exist</td>
+<td>群组不存在</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Permission denied</td>
+<td>操作权限不足</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_43">回应进群邀请</h3>
+<ul>
+<li>
+<p><strong>URL</strong>: /user/group/respond_invitation</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于管理员或群主回应进群邀请。</p>
+</li>
+<li>
+<p><strong>请求方法</strong>: POST</p>
+</li>
+<li>
+<p><strong>请求体</strong>：</p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;group_id&quot;: &quot;群组ID&quot;
+  &quot;invitation_id&quot;: &quot;邀请ID&quot;,
+  &quot;response&quot;: &quot;回应&quot; (accepted/rejected)
+}
+</code></pre>
+<ul>
+<li><strong>成功响应</strong></li>
+</ul>
+<pre><code class="language-json">{
+  &quot;responded&quot;: true
+}
+</code></pre>
+<ul>
+<li><strong>错误响应</strong>:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">User is not logged in</td>
+<td>用户未登录</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Invitation not found</td>
+<td>邀请不存在</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Group does not exist</td>
+<td>群组不存在</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Permission denied</td>
+<td>操作权限不足</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_44">用户退出群聊</h3>
+<ul>
+<li>
+<p><strong>URL</strong>: /user/group/leave_group</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于用户退出群聊。</p>
+</li>
+<li>
+<p><strong>请求方法</strong>: POST</p>
+</li>
+<li>
+<p><strong>请求体</strong>：</p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;group_id&quot;: &quot;群组ID&quot;
+}
+</code></pre>
+<ul>
+<li><strong>成功响应</strong></li>
+</ul>
+<pre><code class="language-json">{
+  &quot;left&quot;: true
+}
+</code></pre>
+<ul>
+<li><strong>错误响应</strong>:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">User is not logged in</td>
+<td>用户未登录</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Group does not exist</td>
+<td>群组不存在</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">User is not a member</td>
+<td>用户不是群成员</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">User is the group owner</td>
+<td>用户是群主</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[!NOTE]</p>
+<p><strong>群主不可以退出群聊，只可以先转让，再退群</strong></p>
+</blockquote>
+<h3 id="_45">设置群公告</h3>
+<ul>
+<li>
+<p><strong>URL</strong>:/user /group/set_announcement</p>
+</li>
+<li>
+<p><strong>接口说明</strong>：用于群主或管理员设置群公告。</p>
+</li>
+<li>
+<p><strong>请求方法</strong>: POST</p>
+</li>
+<li>
+<p><strong>请求体</strong>：</p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;group_id&quot;: &quot;群组ID&quot;,
+  &quot;announcement&quot;: &quot;群公告内容&quot;
+}
+</code></pre>
+<ul>
+<li><strong>成功响应</strong></li>
+</ul>
+<pre><code class="language-json">{
+  &quot;set&quot;: true
+}
+</code></pre>
+<ul>
+<li><strong>错误响应</strong>:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">info</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">User is not logged in</td>
+<td>用户未登录</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Group does not exist</td>
+<td>群组不存在</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Permission denied</td>
+<td>操作权限不足</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.bd41221c.min.js"></script>
+      
+    
+  </body>
+</html>

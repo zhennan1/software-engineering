@@ -192,11 +192,11 @@
   ```json
   {
     "username": "Alice", 
-    "avatar_url": "http://example.com/media/avatar/new_avatar.jpg"
+    "avatar_base64": "**"
   }
   ```
 
-  - `avatar_url`表示用户头像的链接。
+  - `avatar_base64`表示用户头像的base64编码。
 
 - **成功响应**
 
@@ -277,12 +277,12 @@
       {
         "user_id": 1,
         "username": "example_user",
-        "avatar_url": "http://example.com/avatar.jpg"
+        "avatar_base64": "**"
       },
       {
         "user_id": 2,
         "username": "another_user",
-        "avatar_url": "http://example.com/avatar2.jpg"
+        "avatar_base64": "**"
       },
       // ...
     ]
@@ -311,7 +311,7 @@
     "username": "example_user",
     "email": "example@example.com",
     "phone": "1234567890",
-    "avatar_url": "http://example.com/avatar.jpg",
+    "avatar_base64": "**",
   }
   ```
   
@@ -377,7 +377,7 @@
         "status": "accept",
         "sent_time": "2024-03-21 12:00:00"
       },
-      // ...
+      //...
     ],
      "sent_requests":[
        {

@@ -827,11 +827,11 @@
 | 2    | Target does not exist  | 目标会话不存在 |
 | 3    | User is not in session | 用户不在会话中 |
 
-### 更新已读/未读状态
+### 更新已读状态
 
 - **URL**: /user/mark_as_read/{conversation_id}
 
-- **接口说明**: 用于用户更新某一会话已读/未读状态。
+- **接口说明**: 用于用户更新某一会话已读状态。
 
 - **请求方法**: POST
 

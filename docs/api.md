@@ -835,6 +835,12 @@
 
 - **请求方法**: POST
 
+- **请求体**: 
+
+```json
+//
+```
+
 - **成功响应**: 
 
 ```json
@@ -849,7 +855,7 @@
 | 2    | Target does not exist  | 目标会话不存在 |
 | 3    | User is not in session | 用户不在会话中 |
 
-### 根据时间或成员查询聊天记录
+### 查询聊天记录
 
 - **URL**: /user/records/{conversation_id}
 

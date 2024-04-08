@@ -864,13 +864,17 @@ conversation_id (required): The ID of the conversation from which to fetch messa
 Query Parameters:
 
 start_time (optional): The start of the time range for which to fetch messages. Should be in ISO 8601 format.
+
 end_time (optional): The end of the time range for which to fetch messages. Should be in ISO 8601 format.
+
 member_id (optional): The ID of a member to fetch messages sent by this specific user.
 
 Sample Call:
 
 GET /user/conversation/1
+
 GET /user/conversation/1?start_time=2023-01-01T00:00:00Z
+
 GET /user/conversation/1?member_id=2
 
 - **成功响应**

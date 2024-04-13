@@ -771,8 +771,8 @@
       "sender_name": "发送者用户名",
       "sender_avatar": "发送者头像链接",
       "create_time": "创建时间",
-      "is_read": "是否已读", //仅私聊
-      "read_by": ["已读用户ID"], //仅群聊
+      "is_read": "是否已读", // 仅私聊
+      "read_by": ["已读用户ID"], // 仅群聊
       "reply_count": "回复次数",
       "reply_to": {
           "msg_id": ,
@@ -781,7 +781,7 @@
           "sender_name": ,
           "sender_avatar": ,
           "create_time": ,
-      } // 如果有回复
+      } // 如果有回复，显示被回复消息的信息
     },
     // ...
   ]

@@ -771,11 +771,17 @@
       "sender_name": "发送者用户名",
       "sender_avatar": "发送者头像链接",
       "create_time": "创建时间",
-      "is_read": "是否已读",
-      "read_by": ["已读用户ID"],
-      "reply_id": "回复消息ID",
-      "reply_content": "回复内容",
-      "replied_times": "被回复次数"
+      "is_read": "是否已读", //仅私聊
+      "read_by": ["已读用户ID"], //仅群聊
+      "reply_count": "回复次数",
+      "reply_to": {
+          "msg_id": ,
+          "content": ,
+          "sender_id": ,
+          "sender_name": ,
+          "sender_avatar": ,
+          "create_time": ,
+      } // 如果有回复
     },
     // ...
   ]
@@ -927,8 +933,6 @@ GET /user/conversation/1?member_id=2
       "sender_name": "发送者用户名",
       "sender_avatar": "发送者头像",
       "create_time": "创建时间",
-      "reply_id": "回复消息ID",
-      "reply_content": "回复内容"
     },
     // ...
   ]

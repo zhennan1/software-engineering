@@ -116,7 +116,7 @@
 
 | code | info                  | 说明       |
 | :--- | :-------------------- | ---------- |
-| 1    | User is not logged in | 用户未登录 |
+| 1    | User not logged in | 用户未登录 |
 | 2    | Incorrect password    | 密码错误   |
 
 ### 用户登录
@@ -171,7 +171,7 @@
 
 | code | info                  | 说明       |
 | :--- | :-------------------- | ---------- |
-| 1    | User is not logged in | 用户未登录 |
+| 1    | User not logged in | 用户未登录 |
 
 ## 编辑信息
 
@@ -207,7 +207,7 @@
 
 | code | info                    | 说明           |
 | :--- | :---------------------- | -------------- |
-| 1    | User is not logged in   | 用户未登录     |
+| 1    | User not logged in   | 用户未登录     |
 
 ### 身份认证信息修改
 
@@ -240,7 +240,7 @@
 
 | code | info                  | 说明         |
 | :--- | :-------------------- | ------------ |
-| 1    | User is not logged in | 用户未登录   |
+| 1    | User not logged in | 用户未登录   |
 | 2    | Wrong old password    | 旧密码错误   |
 | -2   | Invalid password      | 新密码不合法 |
 | -2   | Invalid email         | 邮箱不合法   |
@@ -292,7 +292,7 @@
 
 | code | info                  | 说明       |
 | :--- | :-------------------- | ---------- |
-| 1    | User is not logged in | 用户未登录 |
+| 1    | User not logged in | 用户未登录 |
 
 ### 用户详情
 
@@ -319,7 +319,7 @@
 
 | code | info                  | 说明           |
 | :--- | --------------------- | -------------- |
-| 1    | User is not logged in | 用户未登录     |
+| 1    | User not logged in | 用户未登录     |
 | 2    | User does not exist   | 未找到指定用户 |
 
 ### 发送好友申请
@@ -350,7 +350,7 @@
 
 | code | info                       | 说明                 |
 | :--- | :------------------------- | -------------------- |
-| 1    | User is not logged in      | 用户未登录           |
+| 1    | User not logged in      | 用户未登录           |
 | 2    | Target does not exist      | 目标不存在           |
 | 3    | Already friends            | 已经是好友           |
 | 4    | The request already exists | 请求已存在           |
@@ -404,7 +404,7 @@
 
 | code | info                  | 说明       |
 | :--- | :-------------------- | ---------- |
-| 1    | User is not logged in | 用户未登录 |
+| 1    | User not logged in | 用户未登录 |
 
 ### 回应好友申请
 
@@ -433,7 +433,7 @@
 
 | code | info                   | 说明         |
 | :--- | :--------------------- | ------------ |
-| 1    | User is not logged in  | 用户未登录   |
+| 1    | User not logged in  | 用户未登录   |
 | 2    | Request does not exist | 请求已不存在 |
 
 ### 删除好友
@@ -462,7 +462,7 @@
 
 | code | info                  | 说明         |
 | :--- | :-------------------- | ------------ |
-| 1    | User is not logged in | 用户未登录   |
+| 1    | User not logged in | 用户未登录   |
 | 2    | Target does not exist | 目标不存在   |
 | 3    | Not friends           | 对方不是好友 |
 
@@ -493,7 +493,7 @@
 
 | code | info                  | 说明       |
 | :--- | :-------------------- | ---------- |
-| 1    | User is not logged in | 用户未登录 |
+| 1    | User not logged in | 用户未登录 |
 
 ### 创建分组
 
@@ -523,7 +523,7 @@
 
 | code | info                      | 说明         |
 | :--- | :------------------------ | ------------ |
-| 1    | User is not logged in     | 用户未登录   |
+| 1    | User not logged in     | 用户未登录   |
 | 2    | Invalid group name        | 分组名不合法 |
 | 3    | Group name already exists | 分组名已存在 |
 
@@ -553,7 +553,7 @@
 
 | code | info                            | 说明       |
 | :--- | :------------------------------ | ---------- |
-| 1    | User is not logged in           | 用户未登录 |
+| 1    | User not logged in           | 用户未登录 |
 | 2    | The friend group does not exist | 分组不存在 |
 
 ### 查看分组
@@ -582,7 +582,7 @@
 
 | code | info                  | 说明       |
 | :--- | :-------------------- | ---------- |
-| 1    | User is not logged in | 用户未登录 |
+| 1    | User not logged in | 用户未登录 |
 
 ### 查看分组好友
 
@@ -611,7 +611,7 @@
 
 | code | info                            | 说明       |
 | :--- | :------------------------------ | ---------- |
-| 1    | User is not logged in           | 用户未登录 |
+| 1    | User not logged in           | 用户未登录 |
 | 2    | The friend group does not exist | 分组不存在 |
 
 ### 添加好友到分组
@@ -641,7 +641,7 @@
 
 | code | info                            | 说明               |
 | :--- | :------------------------------ | ------------------ |
-| 1    | User is not logged in           | 用户未登录         |
+| 1    | User not logged in           | 用户未登录         |
 | 2    | Not friends           | 对方不是好友 |
 | 3    | Invalid group name    | 分组名不合法 |
 
@@ -672,7 +672,7 @@
 
 | code | info                             | 说明             |
 | :--- | :------------------------------- | ---------------- |
-| 1    | User is not logged in            | 用户未登录       |
+| 1    | User not logged in            | 用户未登录       |
 | 2    | The  friend group does not exist | 分组不存在       |
 | 3    | Not friends                      | 对方不是好友     |
 | 4    | Not in this group                | 对方不在该分组内 |
@@ -714,7 +714,7 @@
 
 | code | info                  | 说明       |
 | :--- | :-------------------- | ---------- |
-| 1    | User is not logged in | 用户未登录 |
+| 1    | User not logged in | 用户未登录 |
 
 ### 发起私聊
 
@@ -747,7 +747,7 @@
 
 | code | info                  | 说明         |
 | :--- | :-------------------- | ------------ |
-| 1    | User is not logged in | 用户未登录   |
+| 1    | User not logged in | 用户未登录   |
 | 2    | Target does not exist | 目标不存在   |
 | 3    | Not friends           | 对方不是好友 |
 
@@ -789,7 +789,7 @@
 
 | code | info                   | 说明           |
 | :--- | :--------------------- | -------------- |
-| 1    | User is not logged in  | 用户未登录     |
+| 1    | User not logged in  | 用户未登录     |
 | 2    | Target does not exist  | 目标会话不存在 |
 | 3    | User not in conversation | 用户不在会话中 |
 
@@ -822,7 +822,7 @@
 
 | code | info                   | 说明           |
 | :--- | :--------------------- | -------------- |
-| 1    | User is not logged in  | 用户未登录     |
+| 1    | User not logged in  | 用户未登录     |
 | 2    | Target does not exist  | 目标会话不存在 |
 | 3    | User not in conversation | 用户不在会话中 |
 
@@ -850,7 +850,7 @@
 
 | code | info                   | 说明           |
 | :--- | :--------------------- | -------------- |
-| 1    | User is not logged in  | 用户未登录     |
+| 1    | User not logged in  | 用户未登录     |
 | 2    | Target does not exist  | 目标会话不存在 |
 | 3    | User not in conversation | 用户不在会话中 |
 
@@ -906,7 +906,7 @@ GET /user/conversation/1?member_id=2
 
 | code | info                   | 说明           |
 | :--- | :--------------------- | -------------- |
-| 1    | User is not logged in  | 用户未登录     |
+| 1    | User not logged in  | 用户未登录     |
 | 2    | Target does not exist  | 目标会话不存在 |
 | 3    | User not in conversation | 用户不在会话中 |
 
@@ -936,7 +936,7 @@ GET /user/conversation/1?member_id=2
 
 | code | info                   | 说明           |
 | :--- | :--------------------- | -------------- |
-| 1    | User is not logged in  | 用户未登录     |
+| 1    | User not logged in  | 用户未登录     |
 | 2    | Target does not exist  | 目标会话不存在 |
 | 3    | User not in conversation | 用户不在会话   |
 
@@ -980,7 +980,7 @@ GET /user/conversation/1?member_id=2
 
 | code | info                  | 说明           |
 | :--- | :-------------------- | -------------- |
-| 1    | User is not logged in | 用户未登录     |
+| 1    | User not logged in | 用户未登录     |
 | 2    | Target does not exist | 有目标不存在   |
 | 3    | Not friends           | 有目标不是好友 |
 
@@ -1014,7 +1014,7 @@ GET /user/conversation/1?member_id=2
 
 | code | info                  | 说明       |
 | :--- | :-------------------- | ---------- |
-| 1    | User is not logged in | 用户未登录 |
+| 1    | User not logged in | 用户未登录 |
 
 ### 群聊信息展示
 
@@ -1058,7 +1058,7 @@ GET /user/conversation/1?member_id=2
 
 | code | info                   | 说明           |
 | :--- | :--------------------- | -------------- |
-| 1    | User is not logged in  | 用户未登录     |
+| 1    | User not logged in  | 用户未登录     |
 | 2    | Target does not exist  | 群聊不存在     |
 | 3    | User not in conversation | 用户不在会话中 |
 
@@ -1089,7 +1089,7 @@ GET /user/conversation/1?member_id=2
 
 | code | info                    | 说明             |
 | :--- | :---------------------- | ---------------- |
-| 1    | User is not logged in   | 用户未登录       |
+| 1    | User not logged in   | 用户未登录       |
 | 2    | Group does not exist    | 群组不存在       |
 | 3    | Member does not exist   | 成员不存在       |
 | 4    | Member is already admin | 成员已经是管理员 |
@@ -1122,7 +1122,7 @@ GET /user/conversation/1?member_id=2
 
 | code | info                  | 说明           |
 | :--- | :-------------------- | -------------- |
-| 1    | User is not logged in | 用户未登录     |
+| 1    | User not logged in | 用户未登录     |
 | 2    | Group does not exist  | 群组不存在     |
 | 3    | Admin does not exist  | 管理员不存在   |
 | 4    | Member is not admin   | 目标不是管理员 |
@@ -1155,7 +1155,7 @@ GET /user/conversation/1?member_id=2
 
 | code | info                  | 说明         |
 | :--- | :-------------------- | ------------ |
-| 1    | User is not logged in | 用户未登录   |
+| 1    | User not logged in | 用户未登录   |
 | 2    | Group does not exist  | 群组不存在   |
 | 3    | Member does not exist | 目标不存在   |
 | 4    | Permission denied     | 操作权限不足 |
@@ -1187,7 +1187,7 @@ GET /user/conversation/1?member_id=2
 
 | code | info                       | 说明           |
 | :--- | :------------------------- | -------------- |
-| 1    | User is not logged in      | 用户未登录     |
+| 1    | User not logged in      | 用户未登录     |
 | 2    | Group does not exist       | 群组不存在     |
 | 4    | Member is not in the group | 成员不在群组中 |
 | 5    | Permission denied          | 操作权限不足   |
@@ -1219,7 +1219,7 @@ GET /user/conversation/1?member_id=2
 
 | code | info                         | 说明             |
 | :--- | :--------------------------- | ---------------- |
-| 1    | User is not logged in        | 用户未登录       |
+| 1    | User not logged in        | 用户未登录       |
 | 2    | Group does not exist         | 群组不存在       |
 | 3    | User does not exist          | 用户不存在       |
 | 4    | User is already in the group | 用户已经在群组中 |
@@ -1252,7 +1252,7 @@ GET /user/conversation/1?member_id=2
 
 | code | info                    | 说明         |
 | :--- | :---------------------- | ------------ |
-| 1    | User is not logged in   | 用户未登录   |
+| 1    | User not logged in   | 用户未登录   |
 | 2    | Group does not exist    | 群组不存在   |
 | 3    | User does not exist     | 用户不存在   |
 | 4    | Invitation already sent | 邀请已发送   |
@@ -1309,7 +1309,7 @@ GET /user/conversation/1?member_id=2
 
 | code | info                  | 说明         |
 | :--- | :-------------------- | ------------ |
-| 1    | User is not logged in | 用户未登录   |
+| 1    | User not logged in | 用户未登录   |
 | 2    | Group does not exist  | 群组不存在   |
 | 3    | Permission denied     | 操作权限不足 |
 
@@ -1341,7 +1341,7 @@ GET /user/conversation/1?member_id=2
 
 | code | info                  | 说明         |
 | :--- | :-------------------- | ------------ |
-| 1    | User is not logged in | 用户未登录   |
+| 1    | User not logged in | 用户未登录   |
 | 2    | Invitation not found  | 邀请不存在   |
 | 3    | Group does not exist  | 群组不存在   |
 | 4    | Permission denied     | 操作权限不足 |
@@ -1372,7 +1372,7 @@ GET /user/conversation/1?member_id=2
 
 | code | info                    | 说明           |
 | :--- | :---------------------- | -------------- |
-| 1    | User is not logged in   | 用户未登录     |
+| 1    | User not logged in   | 用户未登录     |
 | 2    | Group does not exist    | 群组不存在     |
 | 3    | User is not a member    | 用户不是群成员 |
 | 4    | User is the group owner | 用户是群主     |
@@ -1408,6 +1408,6 @@ GET /user/conversation/1?member_id=2
 
 | code | info                  | 说明         |
 | :--- | :-------------------- | ------------ |
-| 1    | User is not logged in | 用户未登录   |
+| 1    | User not logged in | 用户未登录   |
 | 2    | Group does not exist  | 群组不存在   |
 | 3    | Permission denied     | 操作权限不足 |

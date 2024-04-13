@@ -791,7 +791,7 @@
 | :--- | :--------------------- | -------------- |
 | 1    | User is not logged in  | 用户未登录     |
 | 2    | Target does not exist  | 目标会话不存在 |
-| 3    | User is not in session | 用户不在会话中 |
+| 3    | User not in conversation | 用户不在会话中 |
 
 ### 发送消息
 
@@ -824,7 +824,7 @@
 | :--- | :--------------------- | -------------- |
 | 1    | User is not logged in  | 用户未登录     |
 | 2    | Target does not exist  | 目标会话不存在 |
-| 3    | User is not in session | 用户不在会话中 |
+| 3    | User not in conversation | 用户不在会话中 |
 
 ### 更新已读状态
 
@@ -852,7 +852,7 @@
 | :--- | :--------------------- | -------------- |
 | 1    | User is not logged in  | 用户未登录     |
 | 2    | Target does not exist  | 目标会话不存在 |
-| 3    | User is not in session | 用户不在会话中 |
+| 3    | User not in conversation | 用户不在会话中 |
 
 ### 查询聊天记录
 
@@ -908,7 +908,7 @@ GET /user/conversation/1?member_id=2
 | :--- | :--------------------- | -------------- |
 | 1    | User is not logged in  | 用户未登录     |
 | 2    | Target does not exist  | 目标会话不存在 |
-| 3    | User is not in session | 用户不在会话中 |
+| 3    | User not in conversation | 用户不在会话中 |
 
 ### 删除聊天记录
 
@@ -938,7 +938,7 @@ GET /user/conversation/1?member_id=2
 | :--- | :--------------------- | -------------- |
 | 1    | User is not logged in  | 用户未登录     |
 | 2    | Target does not exist  | 目标会话不存在 |
-| 3    | User is not in session | 用户不在会话   |
+| 3    | User not in conversation | 用户不在会话   |
 
 ## 群聊管理
 
@@ -1060,7 +1060,7 @@ GET /user/conversation/1?member_id=2
 | :--- | :--------------------- | -------------- |
 | 1    | User is not logged in  | 用户未登录     |
 | 2    | Target does not exist  | 群聊不存在     |
-| 3    | User is not in session | 用户不在会话中 |
+| 3    | User not in conversation | 用户不在会话中 |
 
 ### 添加管理员
 

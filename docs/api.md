@@ -995,7 +995,7 @@ GET /user/conversation/1?member_id=2
 
 ```json
 {
-  //
+  "message_id": "新消息id"
 }
 ```
 

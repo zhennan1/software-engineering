@@ -826,6 +826,39 @@
 | 2    | Target does not exist    | 目标会话不存在 |
 | 3    | User not in conversation | 用户不在会话中 |
 
+### 删除消息
+
+- **URL**: /user/delete_message
+
+- **接口说明**: 用于用户在某个会话中删除一条消息。
+
+- **请求方法**: POST
+
+- **请求体**: 
+
+```json
+{
+  "conversation_id": "会话ID",
+  "message_id": "消息ID"
+}
+```
+
+- **成功响应**
+
+```json
+{
+  //
+}
+```
+
+- **错误响应**:
+
+| code | info                     | 说明           |
+| :--- | :----------------------- | -------------- |
+| 1    | User not logged in       | 用户未登录     |
+| 2    | Target does not exist    | 目标会话不存在 |
+| 3    | User not in conversation | 用户不在会话中 |
+
 ### 更新已读状态
 
 - **URL**: /user/mark_as_read/{conversation_id}
@@ -862,19 +895,19 @@
 
 - **请求方法**: GET
 
-URL Parameters:
+- URL 参数:
 
-conversation_id (required): The ID of the conversation from which to fetch messages.
+conversation_id（必需）：从中获取消息的会话的id。
 
-Query Parameters:
+- 查询参数：
 
-start_time (optional): The start of the time range for which to fetch messages. Should be in ISO 8601 format.
+start_time（可选）：获取消息的时间范围的开始。应采用ISO 8601格式。
 
-end_time (optional): The end of the time range for which to fetch messages. Should be in ISO 8601 format.
+end_time（可选）：获取消息的时间范围的结束。应采用ISO 8601格式。
 
-member_id (optional): The ID of a member to fetch messages sent by this specific user.
+member_id（可选）：用于获取该特定用户发送的消息的成员的id。
 
-Sample Call:
+- 例子：
 
 GET /user/conversation/1
 
@@ -934,11 +967,46 @@ GET /user/conversation/1?member_id=2
 
 - **错误响应**:
 
+| code | info                     | 说明         |
+| :--- | :----------------------- | ------------ |
+| 1    | User not logged in       | 用户未登录   |
+| 2    | Target does not exist    | 目标不存在   |
+| 3    | User not in conversation | 用户不在会话 |
+
+### 回复消息
+
+- **URL**: /user/reply_message
+
+- **接口说明**: 用于用户在某个会话中回复一条消息。
+
+- **请求方法**: POST
+
+- **请求体**: 
+
+```json
+{
+  "conversation_id": "会话ID",
+  "reply_to_id": "被回复的消息id",
+  "content": "新消息内容"
+}
+```
+
+- **成功响应**
+
+```json
+{
+  //
+}
+```
+
+- **错误响应**:
+
 | code | info                     | 说明           |
 | :--- | :----------------------- | -------------- |
 | 1    | User not logged in       | 用户未登录     |
-| 2    | Target does not exist    | 目标会话不存在 |
-| 3    | User not in conversation | 用户不在会话   |
+| 2    | Target does not exist    | 目标不存在     |
+| 3    | User not in conversation | 用户不在会话中 |
+
 
 ## 群聊管理
 

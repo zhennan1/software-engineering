@@ -191,7 +191,6 @@
 
 ```json
 {
-  "username": "Alice", 
   "avatar_base64": "**"
 }
 ```
@@ -209,8 +208,6 @@
 | code | info                    | 说明           |
 | :--- | :---------------------- | -------------- |
 | 1    | User is not logged in   | 用户未登录     |
-| 2    | Username already exists | 用户名已经存在 |
-| -2   | Invalid username        | 新用户名不合法 |
 
 ### 身份认证信息修改
 
@@ -248,6 +245,8 @@
 | -2   | Invalid password      | 新密码不合法 |
 | -2   | Invalid email         | 邮箱不合法   |
 | -2   | Invalid phone         | 手机不合法   |
+| 3    | Username already exists | 用户名已经存在 |
+| -2   | Invalid username        | 新用户名不合法 |
 
 ## 好友管理
 
@@ -312,6 +311,7 @@
   "email": "example@example.com",
   "phone": "1234567890",
   "avatar_base64": "**",
+  "is_friend": 1,
 }
 ```
 
@@ -642,9 +642,8 @@
 | code | info                            | 说明               |
 | :--- | :------------------------------ | ------------------ |
 | 1    | User is not logged in           | 用户未登录         |
-| 2    | The friend group does not exist | 分组不存在         |
-| 3    | Not friends                     | 对方不是好友       |
-| 4    | Already in this group           | 对方已经在该分组内 |
+| 2    | Not friends           | 对方不是好友 |
+| 3    | Invalid group name    | 分组名不合法 |
 
 ### 将好友移除分组
 

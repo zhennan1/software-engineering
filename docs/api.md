@@ -1214,11 +1214,11 @@ GET /user/conversation/1?member_id=2
 }
 ```
 
-**邀请状态说明**:
+- **邀请状态说明**:
 
-- pending: 待处理
-- accepted: 已接受
-- rejected: 已拒绝
+pending: 待处理
+accepted: 已接受
+rejected: 已拒绝
 
 - **错误响应**:
 

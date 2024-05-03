@@ -2,6 +2,45 @@
 
 最后更新时间：2024/5/3
 
+## 总览
+
+| URL                                         | 解释             |
+| ------------------------------------------- | ---------------- |
+| `admin/`                                    | 访问管理界面     |
+| `user/register`                             | 用户注册         |
+| `user/logoff`                               | 用户注销         |
+| `user/login`                                | 用户登录         |
+| `user/update_normal_info`                   | 更新用户信息     |
+| `user/update_auth_info`                     | 更新认证信息     |
+| `user/search_friends`                       | 搜索朋友         |
+| `user/profile/<str:username>`               | 获取用户资料     |
+| `user/send_friend_request`                  | 发送好友请求     |
+| `user/friend_requests`                      | 查看好友请求     |
+| `user/respond_friend_request`               | 响应好友请求     |
+| `user/delete_friend`                        | 删除好友         |
+| `user/get_friends`                          | 获取好友列表     |
+| `user/add_friend_to_friend_group`           | 添加好友到分组   |
+| `user/get_private_conversations`            | 获取私聊         |
+| `user/create_private_conversation`          | 创建私聊         |
+| `user/conversation/<int:conversation_id>`   | 查看对话详情     |
+| `user/send_message`                         | 发送消息         |
+| `user/delete_message`                       | 删除消息         |
+| `user/records/<int:conversation_id>`        | 获取会话记录     |
+| `user/delete_records/<int:conversation_id>` | 删除会话记录     |
+| `user/mark_as_read/<int:conversation_id>`   | 标记为已读       |
+| `user/reply_message`                        | 回复消息         |
+| `user/create_group_conversation`            | 创建群聊         |
+| `user/get_group_conversations`              | 获取群聊列表     |
+| `user/add_admin`                            | 添加管理员       |
+| `user/remove_admin`                         | 移除管理员       |
+| `user/transfer_owner`                       | 转移群主         |
+| `user/remove_member`                        | 移除群成员       |
+| `user/invite_member`                        | 邀请成员加入群聊 |
+| `user/view_invitations`                     | 查看邀请         |
+| `user/review_invitation`                    | 审查邀请         |
+| `user/quit_group`                           | 退出群聊         |
+| `user/delete_group`                         | 删除群聊         |
+
 ## 说明
 
 ### 信息认证
@@ -1283,11 +1322,11 @@ rejected: 已拒绝
 
 - **错误响应**:
 
-| 错误码 | 状态码 | Info                | 说明       |
-| ------ | ------ | ------------------- | ---------- |
-| 1      | 401    | User not logged in  | 用户未登录 |
-| 40     | 404    | Group not found     | 群聊未找到 |
-| 41     | 403    | User not authorized | 用户无权限 |
+| 错误码 | 状态码 | Info                | 说明             |
+| ------ | ------ | ------------------- | ---------------- |
+| 1      | 401    | User not logged in  | 用户未登录       |
+| 40     | 404    | Group not found     | 群聊未找到       |
+| 41     | 403    | User not authorized | 用户无权限       |
 | 47     | 403    | Owner cannot quit   | 群主不能退出群聊 |
 
 > [!NOTE]

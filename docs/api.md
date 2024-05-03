@@ -975,7 +975,7 @@ GET /user/conversation/1?member_id=2
 
 ### 获取所有群聊
 
-- **URL**: /user/get_group_conversation
+- **URL**: /user/get_group_conversations
 
 - **接口说明**: 用于用户获取所有的群聊。
 

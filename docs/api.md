@@ -1,6 +1,6 @@
 # API 文档
 
-最后更新时间：2024/4/18
+最后更新时间：2024/5/3
 
 ## 说明
 
@@ -61,8 +61,9 @@
 | ------ | ------ | ------------------- | ------------ |
 | 1      | 401    | User not logged in  | 用户未登录   |
 | 2      | 404    | User does not exist | 用户不存在   |
-| 3      | 405    | Method Not Allowed  | 方法不被允许 |
-| 4      | 400    | Invalid request     | 请求无效     |
+| 3      | 400    | Invalid request     | 请求无效     |
+| *      | 405    | Method Not Allowed  | 方法不被允许 |
+*统一采用django自带的错误返回，无错误码
 
 用户管理
 
@@ -156,13 +157,13 @@
 
 - **错误响应**
 
-| code | info                    | 说明           |
-| :--- | :---------------------- | -------------- |
-| 1    | Username already exists | 用户名已经存在 |
-| -2   | Invalid username        | 用户名不合法   |
-| -2   | Invalid password        | 密码不合法     |
-| -2   | Invalid email           | 邮箱不合法     |
-| -2   | Invalid phone           | 手机不合法     |
+| 错误码 | 状态码 | Info                    | 说明         |
+| ------ | ------ | ----------------------- | ------------ |
+| 10     | 409    | Username already exists | 用户名已存在 |
+| 11     | 400    | Invalid username        | 用户名无效   |
+| 12     | 400    | Invalid password        | 密码无效     |
+| 13     | 400    | Invalid email           | 邮箱地址无效 |
+| 14     | 400    | Invalid phone           | 电话号码无效 |
 
 ### 用户注销
 
@@ -194,10 +195,10 @@
 
 - **错误响应**
 
-| code | info               | 说明       |
-| :--- | :----------------- | ---------- |
-| 1    | User not logged in | 用户未登录 |
-| 2    | Incorrect password | 密码错误   |
+| 错误码 | 状态码 | Info               | 说明       |
+| ------ | ------ | ------------------ | ---------- |
+| 1      | 401    | User not logged in | 用户未登录 |
+| 15     | 403    | Incorrect password | 密码错误   |
 
 ### 用户登录
 
@@ -226,32 +227,10 @@
 
 - **错误响应**
 
-| code | info                | 说明       |
-| :--- | :------------------ | ---------- |
-| 1    | User does not exist | 用户不存在 |
-| 2    | Incorrect password  | 密码错误   |
-
-### ~~用户登出~~
-
--  **URL**: /user/logout
-
-- **接口说明**: 用于用户登出账户。
-
-- **请求方式**: POST
-
-- **成功响应**
-
-```json
-{
-  "logged out": true
-}
-```
-
-- **错误响应**
-
-| code | info               | 说明       |
-| :--- | :----------------- | ---------- |
-| 1    | User not logged in | 用户未登录 |
+| 错误码 | 状态码 | Info                | 说明       |
+| ------ | ------ | ------------------- | ---------- |
+| 2      | 404    | User does not exist | 用户不存在 |
+| 15     | 403    | Incorrect password  | 密码错误   |
 
 ## 编辑信息
 
@@ -285,9 +264,9 @@
 
 - **错误响应**:
 
-| code | info               | 说明       |
-| :--- | :----------------- | ---------- |
-| 1    | User not logged in | 用户未登录 |
+| 错误码 | 状态码 | Info               | 说明       |
+| ------ | ------ | ------------------ | ---------- |
+| 1      | 401    | User not logged in | 用户未登录 |
 
 ### 身份认证信息修改
 
@@ -318,15 +297,15 @@
 
 - **错误响应**:
 
-| code | info                    | 说明           |
-| :--- | :---------------------- | -------------- |
-| 1    | User not logged in      | 用户未登录     |
-| 2    | Wrong old password      | 旧密码错误     |
-| -2   | Invalid password        | 新密码不合法   |
-| -2   | Invalid email           | 邮箱不合法     |
-| -2   | Invalid phone           | 手机不合法     |
-| 3    | Username already exists | 用户名已经存在 |
-| -2   | Invalid username        | 新用户名不合法 |
+| 错误码 | 状态码 | Info                    | 说明         |
+| ------ | ------ | ----------------------- | ------------ |
+| 1      | 401    | User not logged in      | 用户未登录   |
+| 10     | 409    | Username already exists | 用户名已存在 |
+| 11     | 400    | Invalid username        | 用户名无效   |
+| 12     | 400    | Invalid password        | 密码无效     |
+| 13     | 400    | Invalid email           | 邮箱地址无效 |
+| 14     | 400    | Invalid phone           | 电话号码无效 |
+| 15     | 403    | Incorrect password      | 密码错误     |
 
 ## 好友管理
 
@@ -370,9 +349,9 @@
 
 - **错误响应**:
 
-| code | info               | 说明       |
-| :--- | :----------------- | ---------- |
-| 1    | User not logged in | 用户未登录 |
+| 错误码 | 状态码 | Info               | 说明       |
+| ------ | ------ | ------------------ | ---------- |
+| 1      | 401    | User not logged in | 用户未登录 |
 
 ### 用户详情
 
@@ -397,10 +376,10 @@
 
 - **错误响应**:
 
-| code | info                | 说明           |
-| :--- | ------------------- | -------------- |
-| 1    | User not logged in  | 用户未登录     |
-| 2    | User does not exist | 未找到指定用户 |
+| 错误码 | 状态码 | Info               | 说明       |
+| ------ | ------ | ------------------ | ---------- |
+| 1      | 401    | User not logged in | 用户未登录 |
+| 20     | 404    | User not found     | 用户未找到 |
 
 ### 发送好友申请
 
@@ -428,13 +407,13 @@
 
 - **错误响应**:
 
-| code | info                       | 说明                 |
-| :--- | :------------------------- | -------------------- |
-| 1    | User not logged in         | 用户未登录           |
-| 2    | Target does not exist      | 目标不存在           |
-| 3    | Already friends            | 已经是好友           |
-| 4    | The request already exists | 请求已存在           |
-| 5    | Self request detected      | 不能发送给自己的请求 |
+| 错误码 | 状态码 | Info                        | 说明               |
+| ------ | ------ | --------------------------- | ------------------ |
+| 1      | 401    | User not logged in          | 用户未登录         |
+| 20     | 404    | User not found              | 用户未找到         |
+| 23     | 400    | Cannot send request to self | 不能向自己发送请求 |
+| 24     | 409    | Already friends             | 已经是好友了       |
+| 25     | 409    | Request already sent        | 请求已发送         |
 
 ### 查看好友申请
 
@@ -482,9 +461,9 @@
 
 - **错误响应**:
 
-| code | info               | 说明       |
-| :--- | :----------------- | ---------- |
-| 1    | User not logged in | 用户未登录 |
+| 错误码 | 状态码 | Info               | 说明       |
+| ------ | ------ | ------------------ | ---------- |
+| 1      | 401    | User not logged in | 用户未登录 |
 
 ### 回应好友申请
 
@@ -511,10 +490,10 @@
 
 - **错误响应**:
 
-| code | info                   | 说明         |
-| :--- | :--------------------- | ------------ |
-| 1    | User not logged in     | 用户未登录   |
-| 2    | Request does not exist | 请求已不存在 |
+| 错误码 | 状态码 | Info               | 说明       |
+| ------ | ------ | ------------------ | ---------- |
+| 1      | 401    | User not logged in | 用户未登录 |
+| 21     | 404    | Request not found  | 请求未找到 |
 
 ### 删除好友
 
@@ -540,11 +519,12 @@
 
 - **错误响应**:
 
-| code | info                  | 说明         |
-| :--- | :-------------------- | ------------ |
-| 1    | User not logged in    | 用户未登录   |
-| 2    | Target does not exist | 目标不存在   |
-| 3    | Not friends           | 对方不是好友 |
+| 错误码 | 状态码 | Info               | 说明       |
+| ------ | ------ | ------------------ | ---------- |
+| 1      | 401    | User not logged in | 用户未登录 |
+| 22     | 404    | Friend not found   | 好友未找到 |
+| 26     | 409    | Not friends        | 不是好友   |
+好友未找到指这个人不存在，不是好友指这个人存在但不是好友关系
 
 ### 获取好友列表
 
@@ -571,128 +551,9 @@
 
 - **错误响应**:
 
-| code | info               | 说明       |
-| :--- | :----------------- | ---------- |
-| 1    | User not logged in | 用户未登录 |
-
-### 创建分组
-
-- **URL**: /user/create_friend_group
-
-- **接口说明**: 用于用户创建好友分组。
-
-- **请求方法**: POST
-
-- **请求体**: 
-
-```json
-{
-  "friend_group_name":"classmate"
-}
-```
-
-- `friend_group_name`代表分组名，非空字符串，长度不大于20个字符,不能重复。
-
-- **成功响应**
-
-```json
-//
-```
-
-- **错误响应**:
-
-| code | info                      | 说明         |
-| :--- | :------------------------ | ------------ |
-| 1    | User not logged in        | 用户未登录   |
-| 2    | Invalid group name        | 分组名不合法 |
-| 3    | Group name already exists | 分组名已存在 |
-
-### 删除分组
-
-- **URL**: /user/delete_friend_group
-
-- **接口说明**: 用于用户删除好友分组。
-
-- **请求方法**: POST
-
-- **请求体**: 
-
-```json
-{
-  "friend_group_id":"分组的ID"
-}
-```
-
-- **成功响应**
-
-```json
-//
-```
-
-- **错误响应**:
-
-| code | info                            | 说明       |
-| :--- | :------------------------------ | ---------- |
-| 1    | User not logged in              | 用户未登录 |
-| 2    | The friend group does not exist | 分组不存在 |
-
-### 查看分组
-
-- **URL**: /user/get_friend_groups
-
-- **接口说明**: 用于用户获取所有好友分组。
-
-- **请求方法**: GET
-
-- **成功响应**
-
-```json
-{
-  "friend_groups": [
-    {
-      "friend_group_id": "分组ID",
-      "friend_group_name": "分组名称"
-    },
-    // ...
-  ]
-}
-```
-
-- **错误响应**:
-
-| code | info               | 说明       |
-| :--- | :----------------- | ---------- |
-| 1    | User not logged in | 用户未登录 |
-
-### 查看分组好友
-
-- **URL**: /user/get_friends_in_friend_group/{friend_group_id}
-
-- **接口说明**: 用于用户获取所有好友分组。
-
-- **请求方法**: GET
-
-- **成功响应**
-
-```json
-{
-  "friends": [
-    {
-      "user_id": "用户ID",
-      "username": "好友的用户名",
-      "avatar_url": "好友的头像链接"
-    },
-    // ...
-  ]
-}
-```
-
-- **错误响应**:
-
-| code | info                            | 说明       |
-| :--- | :------------------------------ | ---------- |
-| 1    | User not logged in              | 用户未登录 |
-| 2    | The friend group does not exist | 分组不存在 |
+| 错误码 | 状态码 | Info               | 说明       |
+| ------ | ------ | ------------------ | ---------- |
+| 1      | 401    | User not logged in | 用户未登录 |
 
 ### 添加好友到分组
 
@@ -719,43 +580,11 @@
 
 - **错误响应**:
 
-| code | info               | 说明         |
-| :--- | :----------------- | ------------ |
-| 1    | User not logged in | 用户未登录   |
-| 2    | Not friends        | 对方不是好友 |
-| 3    | Invalid group name | 分组名不合法 |
-
-### 将好友移除分组
-
-- **URL**: /user/remove_friend_from_friend_group
-
-- **接口说明**: 用于用户将好友从分组移出。
-
-- **请求方法**: POST
-
-- **请求体**: 
-
-```json
-{
-  "friend_id": "对方的id",
-  "friend_group_id": "分组id"
-}
-```
-
-- **成功响应**
-
-```json
-//
-```
-
-- **错误响应**:
-
-| code | info                             | 说明             |
-| :--- | :------------------------------- | ---------------- |
-| 1    | User not logged in               | 用户未登录       |
-| 2    | The  friend group does not exist | 分组不存在       |
-| 3    | Not friends                      | 对方不是好友     |
-| 4    | Not in this group                | 对方不在该分组内 |
+| 错误码 | 状态码 | Info                      | 说明           |
+| ------ | ------ | ------------------------- | -------------- |
+| 1      | 401    | User not logged in        | 用户未登录     |
+| 26     | 409    | Not friends               | 不是好友       |
+| 27     | 400    | Invalid friend group name | 好友分组名无效 |
 
 ## 会话管理
 
@@ -792,9 +621,9 @@
 
 - **错误响应**:
 
-| code | info               | 说明       |
-| :--- | :----------------- | ---------- |
-| 1    | User not logged in | 用户未登录 |
+| 错误码 | 状态码 | Info               | 说明       |
+| ------ | ------ | ------------------ | ---------- |
+| 1      | 401    | User not logged in | 用户未登录 |
 
 ### 发起私聊
 
@@ -825,11 +654,11 @@
 
 - **错误响应**:
 
-| code | info                  | 说明         |
-| :--- | :-------------------- | ------------ |
-| 1    | User not logged in    | 用户未登录   |
-| 2    | Target does not exist | 目标不存在   |
-| 3    | Not friends           | 对方不是好友 |
+| 错误码 | 状态码 | Info               | 说明       |
+| ------ | ------ | ------------------ | ---------- |
+| 1      | 401    | User not logged in | 用户未登录 |
+| 22     | 404    | Friend not found   | 好友未找到 |
+| 26     | 409    | Not friends        | 不是好友   |
 
 ### 聊天界面
 
@@ -868,16 +697,18 @@
 }
 ```
 
-- `reply_id`是所回复消息的id。
+- `reply_to`是被回复消息的信息。
 - `read_by`是列表，阅读此条消息群成员的id。
 
 - **错误响应**:
 
-| code | info                     | 说明           |
-| :--- | :----------------------- | -------------- |
-| 1    | User not logged in       | 用户未登录     |
-| 2    | Target does not exist    | 目标会话不存在 |
-| 3    | User not in conversation | 用户不在会话中 |
+| 错误码 | 状态码 | Info                     | 说明           |
+| ------ | ------ | ------------------------ | -------------- |
+| 1      | 401    | User not logged in       | 用户未登录     |
+| 30     | 404    | Conversation not found   | 会话未找到     |
+| 31     | 404    | Member not found         | 成员未找到     |
+| 33     | 403    | User not in conversation | 用户不在会话中 |
+这里成员未找到指用户不存在，之后可能会考虑对方不存在的情况
 
 ### 发送消息
 
@@ -906,11 +737,12 @@
 
 - **错误响应**:
 
-| code | info                     | 说明           |
-| :--- | :----------------------- | -------------- |
-| 1    | User not logged in       | 用户未登录     |
-| 2    | Target does not exist    | 目标会话不存在 |
-| 3    | User not in conversation | 用户不在会话中 |
+| 错误码 | 状态码 | Info                     | 说明           |
+| ------ | ------ | ------------------------ | -------------- |
+| 1      | 401    | User not logged in       | 用户未登录     |
+| 30     | 404    | Conversation not found   | 会话未找到     |
+| 31     | 404    | Member not found         | 成员未找到     |
+| 33     | 403    | User not in conversation | 用户不在会话中 |
 
 ### 删除消息
 
@@ -939,11 +771,11 @@
 
 - **错误响应**:
 
-| code | info                     | 说明           |
-| :--- | :----------------------- | -------------- |
-| 1    | User not logged in       | 用户未登录     |
-| 2    | Target does not exist    | 目标会话不存在 |
-| 3    | User not in conversation | 用户不在会话中 |
+| 错误码 | 状态码 | Info                     | 说明           |
+| ------ | ------ | ------------------------ | -------------- |
+| 1      | 401    | User not logged in       | 用户未登录     |
+| 30     | 404    | Conversation not found   | 会话未找到     |
+| 33     | 403    | User not in conversation | 用户不在会话中 |
 
 ### 更新已读状态
 
@@ -967,11 +799,11 @@
 
 - **错误响应**:
 
-| code | info                     | 说明           |
-| :--- | :----------------------- | -------------- |
-| 1    | User not logged in       | 用户未登录     |
-| 2    | Target does not exist    | 目标会话不存在 |
-| 3    | User not in conversation | 用户不在会话中 |
+| 错误码 | 状态码 | Info                     | 说明           |
+| ------ | ------ | ------------------------ | -------------- |
+| 1      | 401    | User not logged in       | 用户未登录     |
+| 30     | 404    | Conversation not found   | 会话未找到     |
+| 33     | 403    | User not in conversation | 用户不在会话中 |
 
 ### 查询聊天记录
 
@@ -1021,11 +853,13 @@ GET /user/conversation/1?member_id=2
 
 - **错误响应**:
 
-| code | info                     | 说明           |
-| :--- | :----------------------- | -------------- |
-| 1    | User not logged in       | 用户未登录     |
-| 2    | Target does not exist    | 目标会话不存在 |
-| 3    | User not in conversation | 用户不在会话中 |
+| 错误码 | 状态码 | Info                     | 说明           |
+| ------ | ------ | ------------------------ | -------------- |
+| 1      | 401    | User not logged in       | 用户未登录     |
+| 30     | 404    | Conversation not found   | 会话未找到     |
+| 31     | 404    | Member not found         | 成员未找到     |
+| 33     | 403    | User not in conversation | 用户不在会话中 |
+这里成员未找到可能是要查找的成员不在会话中。
 
 ### 删除聊天记录
 
@@ -1051,11 +885,11 @@ GET /user/conversation/1?member_id=2
 
 - **错误响应**:
 
-| code | info                     | 说明         |
-| :--- | :----------------------- | ------------ |
-| 1    | User not logged in       | 用户未登录   |
-| 2    | Target does not exist    | 目标不存在   |
-| 3    | User not in conversation | 用户不在会话 |
+| 错误码 | 状态码 | Info                     | 说明           |
+| ------ | ------ | ------------------------ | -------------- |
+| 1      | 401    | User not logged in       | 用户未登录     |
+| 30     | 404    | Conversation not found   | 会话未找到     |
+| 33     | 403    | User not in conversation | 用户不在会话中 |
 
 ### 回复消息
 
@@ -1085,11 +919,11 @@ GET /user/conversation/1?member_id=2
 
 - **错误响应**:
 
-| code | info                     | 说明           |
-| :--- | :----------------------- | -------------- |
-| 1    | User not logged in       | 用户未登录     |
-| 2    | Target does not exist    | 目标不存在     |
-| 3    | User not in conversation | 用户不在会话中 |
+| 错误码 | 状态码 | Info                     | 说明           |
+| ------ | ------ | ------------------------ | -------------- |
+| 1      | 401    | User not logged in       | 用户未登录     |
+| 32     | 404    | Message not found        | 消息未找到     |
+| 33     | 403    | User not in conversation | 用户不在会话中 |
 
 
 ## 群聊管理
@@ -1122,19 +956,22 @@ GET /user/conversation/1?member_id=2
 ```json
 {
   "conversation_id": "会话ID",
-  "group_id": "群ID",
-  "group_name": "群聊名称",
-  "group_avatar": "群聊头像链接"
+  "name": "群聊名称",
+  "members": [{"id": 1, "username": "1"}, {"id": 2, "username": "2"}, {"id": 3, "username": "3"}],
+  "owner_id": "群主ID"
 }
 ```
 
+- `members`是列表类型，包括所有群成员的ID和用户名。
+
 - **错误响应**:
 
-| code | info                  | 说明           |
-| :--- | :-------------------- | -------------- |
-| 1    | User not logged in    | 用户未登录     |
-| 2    | Target does not exist | 有目标不存在   |
-| 3    | Not friends           | 有目标不是好友 |
+| 错误码 | 状态码 | Info                | 说明       |
+| ------ | ------ | ------------------- | ---------- |
+| 1      | 401    | User not logged in  | 用户未登录 |
+| 2      | 404    | User does not exist | 用户不存在 |
+| 26     | 409    | Not friends         | 不是好友   |
+| 31     | 404    | Member not found    | 成员未找到 |
 
 ### 获取所有群聊
 
@@ -1164,59 +1001,13 @@ GET /user/conversation/1?member_id=2
 
 - **错误响应**:
 
-| code | info               | 说明       |
-| :--- | :----------------- | ---------- |
-| 1    | User not logged in | 用户未登录 |
-
-### 群聊信息展示
-
-- **URL**: /user/conversation/{group_id}/info
-
-- **接口说明**: 用于获取特定群聊的基本信息。
-
-- **请求方法**: GET
-
-- **成功响应**
-
-```json
-{
-  "group_id": "群组ID",
-  "group_name": "群聊名称",
-  "owner": {
-    "user_id": "群主ID",
-    "username": "群主用户名",
-    "avatar": "群主头像链接"
-  },
-  "administrators": [
-    {
-      "user_id": "管理员ID",
-      "username": "管理员用户名",
-      "avatar": "管理员头像链接"
-    },
-    // ...,
-  ],
-  "members": [
-    {
-      "user_id": "成员ID",
-      "username": "成员用户名",
-      "avatar": "成员头像链接"
-    },
-    // ...,
-  ]
-}
-```
-
-**错误响应**:
-
-| code | info                     | 说明           |
-| :--- | :----------------------- | -------------- |
-| 1    | User not logged in       | 用户未登录     |
-| 2    | Target does not exist    | 群聊不存在     |
-| 3    | User not in conversation | 用户不在会话中 |
+| 错误码 | 状态码 | Info               | 说明       |
+| ------ | ------ | ------------------ | ---------- |
+| 1      | 401    | User not logged in | 用户未登录 |
 
 ### 添加管理员
 
-- **URL**: /user/group/add_admin
+- **URL**: /user/add_admin
 
 - **接口说明**: 用于群主将群成员提升为管理员。
 
@@ -1239,17 +1030,17 @@ GET /user/conversation/1?member_id=2
 
 - **错误响应**:
 
-| code | info                    | 说明             |
-| :--- | :---------------------- | ---------------- |
-| 1    | User not logged in      | 用户未登录       |
-| 2    | Group does not exist    | 群组不存在       |
-| 3    | Member does not exist   | 成员不存在       |
-| 4    | Member is already admin | 成员已经是管理员 |
-| 5    | Permission denied       | 操作权限不足     |
+| 错误码 | 状态码 | Info                | 说明       |
+| ------ | ------ | ------------------- | ---------- |
+| 1      | 401    | User not logged in  | 用户未登录 |
+| 40     | 404    | Group not found     | 群聊未找到 |
+| 31     | 404    | Member not found    | 成员未找到 |
+| 41     | 403    | User not authorized | 用户无权限 |
+| 49     | 409    | Already admin       | 已是管理员 |
 
 ### 移除管理员
 
-- **URL**: /user/group/remove_admin
+- **URL**: /user/remove_admin
 
 - **接口说明**: 用于群主将管理员移除出管理员角色。
 
@@ -1260,7 +1051,7 @@ GET /user/conversation/1?member_id=2
 ```json
 {
   "group_id": "群组ID",
-  "admin_id": "管理员ID"
+  "member_id": "要移除管理员的成员ID"
 }
 ```
 
@@ -1272,17 +1063,18 @@ GET /user/conversation/1?member_id=2
 
 - **错误响应**:
 
-| code | info                 | 说明           |
-| :--- | :------------------- | -------------- |
-| 1    | User not logged in   | 用户未登录     |
-| 2    | Group does not exist | 群组不存在     |
-| 3    | Admin does not exist | 管理员不存在   |
-| 4    | Member is not admin  | 目标不是管理员 |
-| 5    | Permission denied    | 操作权限不足   |
+| 错误码 | 状态码 | Info                | 说明           |
+| ------ | ------ | ------------------- | -------------- |
+| 1      | 401    | User not logged in  | 用户未登录     |
+| 40     | 404    | Group not found     | 群聊未找到     |
+| 41     | 403    | User not authorized | 用户无权限     |
+| 42     | 403    | Member not admin    | 成员不是管理员 |
+| 43     | 403    | Not in group        | 不在群聊中     |
+| 48     | 409    | Already owner       | 已是群主       |
 
 ### 转让群主
 
-- **URL**: /user/group/transfer_ownership
+- **URL**: /user/transfer_owner
 
 - **接口说明**: 用于群主将群的所有权转让给另一个群成员。
 
@@ -1305,16 +1097,17 @@ GET /user/conversation/1?member_id=2
 
 - **错误响应**:
 
-| code | info                  | 说明         |
-| :--- | :-------------------- | ------------ |
-| 1    | User not logged in    | 用户未登录   |
-| 2    | Group does not exist  | 群组不存在   |
-| 3    | Member does not exist | 目标不存在   |
-| 4    | Permission denied     | 操作权限不足 |
+| 错误码 | 状态码 | Info                | 说明       |
+| ------ | ------ | ------------------- | ---------- |
+| 1      | 401    | User not logged in  | 用户未登录 |
+| 40     | 404    | Group not found     | 群聊未找到 |
+| 41     | 403    | User not authorized | 用户无权限 |
+| 43     | 403    | Not in group        | 不在群聊中 |
+| 48     | 409    | Already owner       | 已是群主   |
 
 ### 移除群成员
 
-- **URL**: /user/group/remove_member
+- **URL**: /user/remove_member
 
 - **接口说明**: 用于群主或管理员移除群成员。
 
@@ -1337,51 +1130,21 @@ GET /user/conversation/1?member_id=2
 
 - **错误响应**:
 
-| code | info                       | 说明           |
-| :--- | :------------------------- | -------------- |
-| 1    | User not logged in         | 用户未登录     |
-| 2    | Group does not exist       | 群组不存在     |
-| 4    | Member is not in the group | 成员不在群组中 |
-| 5    | Permission denied          | 操作权限不足   |
+| 错误码 | 状态码 | Info                | 说明           |
+| ------ | ------ | ------------------- | -------------- |
+| 1      | 401    | User not logged in  | 用户未登录     |
+| 40     | 404    | Group not found     | 群聊未找到     |
+| 41     | 403    | User not authorized | 用户无权限     |
+| 43     | 403    | Not in group        | 不在群聊中     |
+| 44     | 403    | Cannot remove self  | 不能移除自己   |
+| 45     | 403    | Cannot remove owner | 不能移除群主   |
+| 46     | 403    | Cannot remove admin | 不能移除管理员 |
 
 ### 邀请用户加入群聊
 
-- **URL**: /user/group/invite_member
+- **URL**: /user/invite_member
 
-- **接口说明**: 用于管理员或群主邀请用户加入群聊。
-
-- **请求方法**: POST
-
-- **请求体**: 
-
-```json
-{
-  "group_id": "群组ID",
-  "invited_user_id": "被邀请用户ID"
-}
-```
-
-- **成功响应**
-
-```json
-//
-```
-
-- **错误响应**:
-
-| code | info                         | 说明             |
-| :--- | :--------------------------- | ---------------- |
-| 1    | User not logged in           | 用户未登录       |
-| 2    | Group does not exist         | 群组不存在       |
-| 3    | User does not exist          | 用户不存在       |
-| 4    | User is already in the group | 用户已经在群组中 |
-| 5    | Permission denied            | 操作权限不足     |
-
-### 邀请加入群聊
-
-- **URL**: /user/group/invite
-
-- **接口说明**: 用于群成员邀请用户加入群聊，需要群主或管理员审核。
+- **接口说明**: 用于邀请用户加入群聊。
 
 - **请求方法**: POST
 
@@ -1390,33 +1153,39 @@ GET /user/conversation/1?member_id=2
 ```json
 {
   "group_id": "群组ID",
-  "invited_user_id": "被邀请用户ID"
+  "invitee_id": "被邀请用户ID"
 }
 ```
 
 - **成功响应**
 
 ```json
-//
+// 群主或管理员
+{
+  "message": "User added directly by admin/owner"
+}
+// 不是群主或管理员
+{
+  "request_id": "请求ID"
+}
 ```
 
 - **错误响应**:
-
-| code | info                    | 说明         |
-| :--- | :---------------------- | ------------ |
-| 1    | User not logged in      | 用户未登录   |
-| 2    | Group does not exist    | 群组不存在   |
-| 3    | User does not exist     | 用户不存在   |
-| 4    | Invitation already sent | 邀请已发送   |
-| 5    | Permission denied       | 操作权限不足 |
+- 
+| 错误码 | 状态码 | Info                    | 说明       |
+| ------ | ------ | ----------------------- | ---------- |
+| 1      | 401    | User not logged in      | 用户未登录 |
+| 40     | 404    | Group not found         | 群聊未找到 |
+| 41     | 403    | User not authorized     | 用户无权限 |
+| 50     | 409    | Invitation already sent | 邀请已发送 |
 
 ### 查看邀请请求
 
-- **URL**: /user/group/invitations
+- **URL**: /user/view_invitations
 
 - **接口说明**: 用于管理员或群主查看所有待审核的邀请请求。
 
-- **请求方法**: POST
+- **请求方法**: GET
 
 - **请求体**: 
 
@@ -1430,21 +1199,15 @@ GET /user/conversation/1?member_id=2
 
 ```json
 {
-  "invitations": [
+  "join_requests": [
     {
-      "invitation_id": "邀请ID",
-      "inviter": {
-    "user_id": "邀请者ID",
-    "name": "邀请者用户名",
-    "avatar": "邀请者头像链接"
-  },
-  "invitee": {
-    "user_id": "被邀请者ID",
-    "name": "被邀请者用户名",
-    "avatar": "被邀请者头像链接"
-  },
-  "status": "邀请状态",
-  "create_time": "创建时间"
+      "request_id": "邀请ID",
+      "invitee_id": "被邀请者ID",
+      "invitee_name": "被邀请者用户名",
+      "inviter_id": "邀请者ID",
+      "inviter_name": "邀请者用户名",
+      "status": "邀请状态，pending/accepted/rejected",
+      "created_at": "邀请创建时间"
     }
     // ...
   ]
@@ -1459,15 +1222,15 @@ GET /user/conversation/1?member_id=2
 
 - **错误响应**:
 
-| code | info                 | 说明         |
-| :--- | :------------------- | ------------ |
-| 1    | User not logged in   | 用户未登录   |
-| 2    | Group does not exist | 群组不存在   |
-| 3    | Permission denied    | 操作权限不足 |
+| 错误码 | 状态码 | Info                | 说明       |
+| ------ | ------ | ------------------- | ---------- |
+| 1      | 401    | User not logged in  | 用户未登录 |
+| 40     | 404    | Group not found     | 群聊未找到 |
+| 41     | 403    | User not authorized | 用户无权限 |
 
-### 回应进群邀请
+### 处理进群邀请
 
-- **URL**: /user/group/respond_invitation
+- **URL**: /user/review_invitation
 
 - **接口说明**: 用于管理员或群主回应进群邀请。
 
@@ -1477,9 +1240,8 @@ GET /user/conversation/1?member_id=2
 
 ```json
 {
-  "group_id": "群组ID",
-  "invitation_id": "邀请ID",
-  "response": "回应" // (accepted/rejected)
+  "request_id": "邀请ID",
+  "response": "回应，accept/reject"
 }
 ```
 
@@ -1491,16 +1253,15 @@ GET /user/conversation/1?member_id=2
 
 - **错误响应**:
 
-| code | info                 | 说明         |
-| :--- | :------------------- | ------------ |
-| 1    | User not logged in   | 用户未登录   |
-| 2    | Invitation not found | 邀请不存在   |
-| 3    | Group does not exist | 群组不存在   |
-| 4    | Permission denied    | 操作权限不足 |
+| 错误码 | 状态码 | Info                 | 说明       |
+| ------ | ------ | -------------------- | ---------- |
+| 1      | 401    | User not logged in   | 用户未登录 |
+| 41     | 403    | User not authorized  | 用户无权限 |
+| 51     | 404    | Invitation not found | 邀请未找到 |
 
 ### 用户退出群聊
 
-- **URL**: /user/group/leave_group
+- **URL**: /user/quit_group
 
 - **接口说明**: 用于用户退出群聊。
 
@@ -1522,22 +1283,22 @@ GET /user/conversation/1?member_id=2
 
 - **错误响应**:
 
-| code | info                    | 说明           |
-| :--- | :---------------------- | -------------- |
-| 1    | User not logged in      | 用户未登录     |
-| 2    | Group does not exist    | 群组不存在     |
-| 3    | User is not a member    | 用户不是群成员 |
-| 4    | User is the group owner | 用户是群主     |
+| 错误码 | 状态码 | Info                | 说明       |
+| ------ | ------ | ------------------- | ---------- |
+| 1      | 401    | User not logged in  | 用户未登录 |
+| 40     | 404    | Group not found     | 群聊未找到 |
+| 41     | 403    | User not authorized | 用户无权限 |
+| 47     | 403    | Owner cannot quit   | 群主不能退出群聊 |
 
 > [!NOTE]
 >
 > **群主不可以退出群聊，只可以先转让，再退群**
 
-### ~~设置群公告~~
+### 群主解散群聊
 
-- **URL**:/user /group/set_announcement
+- **URL**: /user/delete_group
 
-- **接口说明**: 用于群主或管理员设置群公告。
+- **接口说明**: 群主解散群聊。
 
 - **请求方法**: POST
 
@@ -1545,8 +1306,7 @@ GET /user/conversation/1?member_id=2
 
 ```json
 {
-  "group_id": "群组ID",
-  "announcement": "群公告内容"
+  "group_id": "群组ID"
 }
 ```
 
@@ -1558,8 +1318,9 @@ GET /user/conversation/1?member_id=2
 
 - **错误响应**:
 
-| code | info                 | 说明         |
-| :--- | :------------------- | ------------ |
-| 1    | User not logged in   | 用户未登录   |
-| 2    | Group does not exist | 群组不存在   |
-| 3    | Permission denied    | 操作权限不足 |
+| 错误码 | 状态码 | Info                | 说明       |
+| ------ | ------ | ------------------- | ---------- |
+| 1      | 401    | User not logged in  | 用户未登录 |
+| 40     | 404    | Group not found     | 群聊未找到 |
+| 41     | 403    | User not authorized | 用户无权限 |
+

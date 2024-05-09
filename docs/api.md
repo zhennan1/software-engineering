@@ -36,7 +36,7 @@
 | `user/transfer_owner`                         | 转移群主         |
 | `user/remove_member`                          | 移除群成员       |
 | `user/invite_member`                          | 邀请成员加入群聊 |
-| `user/view_invitations`                       | 查看邀请         |
+| `user/view_invitations/<int:group_id>`        | 查看邀请         |
 | `user/review_invitation`                      | 审查邀请         |
 | `user/quit_group`                             | 退出群聊         |
 | `user/delete_group`                           | 删除群聊         |

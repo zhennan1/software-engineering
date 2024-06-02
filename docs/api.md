@@ -1350,3 +1350,4 @@ rejected: 已拒绝
 | 1      | 401    | User not logged in | 用户未登录 |
 | 40     | 404    | Group not found    | 群聊未找到 |
 | 43     | 403    | Not in group       | 不在群聊中 |
+

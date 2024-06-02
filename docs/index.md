@@ -14,11 +14,7 @@ Secoder平台：[https://sep.secoder.net/#/](https://sep.secoder.net/#/)
 
 项目仓库：[https://gitlab.secoder.net/Dream](https://gitlab.secoder.net/Dream)
 
-Github仓库：[https://zhennan1.github.io/software-engineering/](https://zhennan1.github.io/software-engineering/)
-
 API文档：[https://zhennan1.github.io/software-engineering/api/](https://zhennan1.github.io/software-engineering/api/)
-
-Socket文档：[https://zhennan1.github.io/software-engineering/socket/](https://zhennan1.github.io/software-engineering/socket/)
 
 Commit规范：[https://zhennan1.github.io/software-engineering/commit/](https://zhennan1.github.io/software-engineering/commit/)
 
